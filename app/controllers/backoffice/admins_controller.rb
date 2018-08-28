@@ -6,6 +6,9 @@ class Backoffice::AdminsController < BackofficeController
   after_action :verify_authorized, only: [:new, :destroy] # Verifica se foi autorizado (caso alguém apague ou comente a linha de autorização na definição)
   after_action :verify_policy_scoped, only: :index # Verifica se o escopo foi utilizado
 
+  # Variáveis
+  @@saved_admin_name
+
   def index
     @admins = policy_scope(Admin) # Verifica, através do escopo do Pundit, quais Administradores devem ser mostrados
   end
@@ -29,8 +32,9 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def update
-
+    save_admin_name
     if @admin.update(params_admin)
+      AdminMailer.update_email(current_admin, @admin, @@saved_admin_name).deliver_now # Manda um email para o administrador que teve seus dados alterados
       redirect_to backoffice_admins_path,
         notice: "O perfil do Administrador (#{@admin.name}) foi alterado com sucesso!" # Redireciona enviando uma mensagem de alteração
     else
@@ -40,11 +44,11 @@ class Backoffice::AdminsController < BackofficeController
 
   def destroy
     authorize @admin
-    admin_name = @admin.name
+    save_admin_name
 
     if @admin.destroy
       redirect_to backoffice_admins_path,
-        notice: "O Administrador (#{admin_name}) foi excluído com sucesso!" # Redireciona enviando uma mensagem de alteração
+        notice: "O Administrador (#{@@saved_admin_name}) foi excluído com sucesso!" # Redireciona enviando uma mensagem de alteração
     else
       render :index
     end
@@ -52,13 +56,17 @@ class Backoffice::AdminsController < BackofficeController
 
   private
 
-    def params_admin
-    passwd = params[:admin][:password] # Pega a senha do administrador
-    passwd_conf = params[:admin][:password_confirmation]
-
-    if passwd.blank? && passwd_conf.blank? # Verifica se estão vindo do formulário em branco
-      params[:admin].except!(:password, :password_confirmation) # Ignora as senhas para poder atualizar o email do administrador
+    def save_admin_name
+      @@saved_admin_name = @admin.name
     end
+
+    def params_admin
+      passwd = params[:admin][:password] # Pega a senha do administrador
+      passwd_conf = params[:admin][:password_confirmation]
+
+      if passwd.blank? && passwd_conf.blank? # Verifica se estão vindo do formulário em branco
+        params[:admin].except!(:password, :password_confirmation) # Ignora as senhas para poder atualizar o email do administrador
+      end
 
       params.require(:admin).permit(policy(@admin).permitted_attributes) # Libera os parâmetros conforme o tipo de adm definidos na 'admin_policy.rb'
     end

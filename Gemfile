@@ -56,6 +56,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # Catches mail and serves it through a dream. http://mailcatcher.me
+  gem 'mailcatcher'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Better error page for Rack apps
