@@ -19048,3 +19048,305 @@ Processing by Backoffice::AdminsController#index as HTML
   Rendered backoffice/admins/index.html.erb within layouts/backoffice (11.6ms)
   Rendered layouts/backoffice_shared/_navigation.html.erb (2.8ms)
 Completed 200 OK in 200ms (Views: 197.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/backoffice/admins/4/edit" for 127.0.0.1 at 2018-08-28 15:55:41 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Backoffice::AdminsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered backoffice/admins/shared/_form.html.erb (2518.5ms)
+  Rendered backoffice/admins/edit.html.erb within layouts/backoffice (2530.5ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (3.9ms)
+Completed 200 OK in 3350ms (Views: 3292.7ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/backoffice/admins/4" for 127.0.0.1 at 2018-08-28 15:55:47 -0300
+Processing by Backoffice::AdminsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lu4Q4LOjSPqtAKjwB/cE3pF3y85+86g3H8lYud3gaZ81FhpWp4D3H3etqRzx6CsGlUhNTkSLE7YgjdOesKwzDg==", "admin"=>{"name"=>"Hoyt Lehner Jr.", "email"=>"anderson@sporergerhold.info", "role"=>"full", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "id"=>"4"}
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "admins" SET "role" = ?, "updated_at" = ? WHERE "admins"."id" = ?[0m  [["role", 0], ["updated_at", "2018-08-28 18:55:47.720874"], ["id", 4]]
+  [1m[35m (37.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/backoffice/admins
+Completed 302 Found in 59ms (ActiveRecord: 38.5ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 15:55:47 -0300
+Processing by Backoffice::AdminsController#index as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.3ms)[0m  SELECT "admins".* FROM "admins"
+  Rendered backoffice/admins/index.html.erb within layouts/backoffice (15.2ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.9ms)
+Completed 200 OK in 303ms (Views: 297.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/backoffice/admins/4/edit" for 127.0.0.1 at 2018-08-28 15:55:51 -0300
+Processing by Backoffice::AdminsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered backoffice/admins/shared/_form.html.erb (3.7ms)
+  Rendered backoffice/admins/edit.html.erb within layouts/backoffice (8.2ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 235ms (Views: 228.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/backoffice/admins/4" for 127.0.0.1 at 2018-08-28 15:55:54 -0300
+Processing by Backoffice::AdminsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HR3uyRYJlEd4Y070DnmQObUX5SpeowvHvcBotzIEtcK+5eR/AioroqLOTxj4Zr/hsShjqmTbsEaChOOQX0jvUw==", "admin"=>{"name"=>"Hoyt Lehner Jr.", "email"=>"anderson@sporergerhold.info", "role"=>"restricted", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "id"=>"4"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "admins" SET "role" = ?, "updated_at" = ? WHERE "admins"."id" = ?  [["role", 1], ["updated_at", "2018-08-28 18:55:54.635401"], ["id", 4]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/backoffice/admins
+Completed 302 Found in 17ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 15:55:54 -0300
+Processing by Backoffice::AdminsController#index as HTML
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT "admins".* FROM "admins"[0m
+  Rendered backoffice/admins/index.html.erb within layouts/backoffice (10.4ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (2.8ms)
+Completed 200 OK in 177ms (Views: 170.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/admins/sign_out" for 127.0.0.1 at 2018-08-28 15:56:12 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OX4n4TtYA+oBnGiABw2/ilhBg9GyWAs9WZ2w4AvCsGKahi1XL3u8D9sxaWzxEpBSXH4FUYggsLxm2TvHZo7q8w=="}
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 63ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-28 15:56:12 -0300
+Processing by Site::HomeController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/home/index.html.erb within layouts/site (12.6ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.3ms)
+  Rendered layouts/site_shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 101ms (Views: 97.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 15:56:18 -0300
+Processing by Backoffice::AdminsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2018-08-28 15:56:18 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered admins/sessions/new.html.erb within layouts/backoffice_devise (10.4ms)
+Completed 200 OK in 161ms (Views: 159.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in?role=form" for 127.0.0.1 at 2018-08-28 15:56:26 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rcwcKrRqlzcrPcTtJf/OX7RrSovo96lU7bCW99ZOZf5rPoZ6ZhNZKx6QY1+f+XgFo7m7JFyARpHELL5QsYXa4Q==", "admin"=>{"email"=>"anderson@sporergerhold.info", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."email" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["email", "anderson@sporergerhold.info"]]
+Redirected to http://localhost:3000/backoffice/admins
+Completed 302 Found in 305ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 15:56:26 -0300
+Processing by Backoffice::AdminsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT "admins".* FROM "admins" WHERE "admins"."role" = ?  [["role", 1]]
+  Rendered backoffice/admins/index.html.erb within layouts/backoffice (4.8ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 157ms (Views: 152.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/backoffice/admins/5/edit" for 127.0.0.1 at 2018-08-28 15:56:34 -0300
+Processing by Backoffice::AdminsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered backoffice/admins/shared/_form.html.erb (6.2ms)
+  Rendered backoffice/admins/edit.html.erb within layouts/backoffice (7.9ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 186ms (Views: 181.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/backoffice/admins/5" for 127.0.0.1 at 2018-08-28 15:56:38 -0300
+Processing by Backoffice::AdminsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"75XmKdRuzmKS25BZR48Ts4iBiUKWMwGjtVVLvxoB04dZ81ID7PiOz0yiMruQFgEzAT8KwhGdLJ1AHUwg+pvnvg==", "admin"=>{"name"=>"Melissia Dietrich DDS", "email"=>"eusebiobrakus@fay.co", "role"=>"full", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "id"=>"5"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 5]]
+Unpermitted parameter: role
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/backoffice/admins
+Completed 302 Found in 15ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 15:56:38 -0300
+Processing by Backoffice::AdminsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT "admins".* FROM "admins" WHERE "admins"."role" = ?  [["role", 1]]
+  Rendered backoffice/admins/index.html.erb within layouts/backoffice (4.2ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 158ms (Views: 154.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/backoffice/admins/5/edit" for 127.0.0.1 at 2018-08-28 15:56:41 -0300
+Processing by Backoffice::AdminsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered backoffice/admins/shared/_form.html.erb (6.3ms)
+  Rendered backoffice/admins/edit.html.erb within layouts/backoffice (7.3ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 185ms (Views: 180.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/backoffice/admins/5/edit" for 127.0.0.1 at 2018-08-28 15:58:59 -0300
+Processing by Backoffice::AdminsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered backoffice/admins/shared/_form.html.erb (9.4ms)
+  Rendered backoffice/admins/edit.html.erb within layouts/backoffice (14.4ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 200ms (Views: 171.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-12a2063a215630107d4183f50348b529e7e6972401e8217325092cdcfd984ff8.css?body=1" for 127.0.0.1 at 2018-08-28 15:58:59 -0300
+
+
+Started GET "/assets/font-awesome.self-2a86d2017f4b74f22943750b3b50b9cb753581bab96cbdaaf2df53f4c04c995b.css?body=1" for 127.0.0.1 at 2018-08-28 15:58:59 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-711ee0af6db03554b93fbc030102442ac36783b11e71952e6593dfb9c735208b.css?body=1" for 127.0.0.1 at 2018-08-28 15:58:59 -0300
+
+
+Started GET "/assets/backoffice.self-df51fd9c6bc3af93c9e7bda279a8da1d7210fcd7a9d89014067b1889c43c48bc.css?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/application.self-89655ea40500a342dad2ac571974c28abab3e3897c63fef4c2d06d7564836879.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/flot/excanvas.min.self-39a325f42722afab6a881d53103be4a76f999942a97f97d0fe15478af19519cd.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/flot/jquery.flot.self-c14ce1ecd2ce4c63225ea890baab32a8844dc3a9934549b5e9eb1161587a5ec6.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/flot/jquery.flot.pie.self-8be6563386a9e5a0257c552307e93734d4649757266413b50b11bdcc170ce86c.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/flot/jquery.flot.resize.self-75fb517c67caae33f5aea9880c10df2e4ddf7445480fbac96822be335943732b.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/flot/jquery.flot.time.self-d60994112d7402b1e199546f7b366bc2041b8544e32958099988299e25338894.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/flot/jquery.flot.tooltip.min.self-3345c66f1cdbff3552b69da0179c86e8efd5184c9fd13fef0b0fb91186e946ea.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/jquery/jquery.dataTables.min.self-67e5a542fa1b796f9c9dd66ef14d525d7ab93ebe0dbbba94feafe5326de5e303.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/bootstrap/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/bootstrap/dataTables.bootstrap.min.self-0cc74308cee62d36e05289fd12ce427717644593891ee3c8af1889482bd1623f.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/metis_menu/metisMenu.min.self-0db38256c73148671fb4a78e415b3cc67983c7ee20fdb697fcf4505c673c567d.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/morris/morris.min.self-4af92d7906a27d9873d17376c88128564082ab7acc6e7055d61bd398db3c0276.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/raphael/raphael-min.self-941b13323aa7867e65545caa1f27a7cb2e1b6a7346826fb2701e600a7f9fe885.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/sb-admin-2/sb-admin-2.self-d13000f5aac8081ed88b30a7a68c5e0a1cd2f6966087d86f3bb623e9183073be.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-8f656e10010f13d661c333ec222afca6f567507f4f767f26a381330465690cd0.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/notifyjs/notify.self-580979233c906abe103d95ccdbfe97994e5a03d69946ab5b2f74dc3a667fde52.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/notifyjs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/bootbox/bootbox.self-b5ca8f60fcb153e16cbf9b1576f9f12d827b26af705a98b8b7065bb59d2e6d8f.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/bootbox.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started GET "/assets/backoffice.self-c2391f307805ad269c5db10f363c9f3f70ce66ed8e9f5ac51bdb83482db7f837.js?body=1" for 127.0.0.1 at 2018-08-28 15:59:00 -0300
+
+
+Started DELETE "/admins/sign_out" for 127.0.0.1 at 2018-08-28 15:59:11 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PsRTm8yNn8vkq8Y6JZzEH1qBeuzjsjSvu2vZO4CnBjSIouex9BvfZjrSZNjyBdaf0z/5bGQcGZFOI96kYD0yDQ=="}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-28 15:59:11 -0300
+Processing by Site::HomeController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/home/index.html.erb within layouts/site (9.2ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.0ms)
+  Rendered layouts/site_shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 99ms (Views: 95.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 15:59:16 -0300
+Processing by Backoffice::AdminsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2018-08-28 15:59:16 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered admins/sessions/new.html.erb within layouts/backoffice_devise (6.3ms)
+Completed 200 OK in 176ms (Views: 174.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in?role=form" for 127.0.0.1 at 2018-08-28 15:59:22 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uy/Vwgq7V5gBRedgSWmkMdL4RBK5aFxljdCeV3Mu9W5WFNiFD2y1SY6VWSncXQxUb2+UqQVk/qFfpHMBZeBTJw==", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["email", "admin@admin.com"]]
+Redirected to http://localhost:3000/backoffice/admins
+Completed 302 Found in 284ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 15:59:22 -0300
+Processing by Backoffice::AdminsController#index as HTML
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT "admins".* FROM "admins"[0m
+  Rendered backoffice/admins/index.html.erb within layouts/backoffice (14.8ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 195ms (Views: 192.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/backoffice/admins/4/edit" for 127.0.0.1 at 2018-08-28 15:59:25 -0300
+Processing by Backoffice::AdminsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered backoffice/admins/shared/_form.html.erb (3.6ms)
+  Rendered backoffice/admins/edit.html.erb within layouts/backoffice (5.6ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 174ms (Views: 167.8ms | ActiveRecord: 0.2ms)
