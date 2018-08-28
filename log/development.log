@@ -18093,3 +18093,958 @@ Processing by Backoffice::AdminsController#index as HTML
   Rendered backoffice/admins/index.html.erb within layouts/backoffice (3.6ms)
   Rendered layouts/backoffice_shared/_navigation.html.erb (0.5ms)
 Completed 200 OK in 162ms (Views: 154.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 14:39:34 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Backoffice::AdminsController#index as HTML
+Completed 401 Unauthorized in 39ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2018-08-28 14:39:38 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered admins/sessions/new.html.erb within layouts/backoffice_devise (46.5ms)
+Completed 200 OK in 2499ms (Views: 2462.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-12a2063a215630107d4183f50348b529e7e6972401e8217325092cdcfd984ff8.css?body=1" for 127.0.0.1 at 2018-08-28 14:39:40 -0300
+
+
+Started GET "/assets/backoffice.self-df51fd9c6bc3af93c9e7bda279a8da1d7210fcd7a9d89014067b1889c43c48bc.css?body=1" for 127.0.0.1 at 2018-08-28 14:39:40 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-711ee0af6db03554b93fbc030102442ac36783b11e71952e6593dfb9c735208b.css?body=1" for 127.0.0.1 at 2018-08-28 14:39:40 -0300
+
+
+Started GET "/assets/font-awesome.self-2a86d2017f4b74f22943750b3b50b9cb753581bab96cbdaaf2df53f4c04c995b.css?body=1" for 127.0.0.1 at 2018-08-28 14:39:40 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:40 -0300
+
+
+Started GET "/assets/application.self-89655ea40500a342dad2ac571974c28abab3e3897c63fef4c2d06d7564836879.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:40 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:40 -0300
+
+
+Started GET "/assets/flot/excanvas.min.self-39a325f42722afab6a881d53103be4a76f999942a97f97d0fe15478af19519cd.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:40 -0300
+
+
+Started GET "/assets/flot/jquery.flot.self-c14ce1ecd2ce4c63225ea890baab32a8844dc3a9934549b5e9eb1161587a5ec6.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:40 -0300
+
+
+Started GET "/assets/flot/jquery.flot.pie.self-8be6563386a9e5a0257c552307e93734d4649757266413b50b11bdcc170ce86c.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/flot/jquery.flot.resize.self-75fb517c67caae33f5aea9880c10df2e4ddf7445480fbac96822be335943732b.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/flot/jquery.flot.time.self-d60994112d7402b1e199546f7b366bc2041b8544e32958099988299e25338894.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/flot/jquery.flot.tooltip.min.self-3345c66f1cdbff3552b69da0179c86e8efd5184c9fd13fef0b0fb91186e946ea.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/jquery/jquery.dataTables.min.self-67e5a542fa1b796f9c9dd66ef14d525d7ab93ebe0dbbba94feafe5326de5e303.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/bootstrap/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/bootstrap/dataTables.bootstrap.min.self-0cc74308cee62d36e05289fd12ce427717644593891ee3c8af1889482bd1623f.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/metis_menu/metisMenu.min.self-0db38256c73148671fb4a78e415b3cc67983c7ee20fdb697fcf4505c673c567d.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/morris/morris.min.self-4af92d7906a27d9873d17376c88128564082ab7acc6e7055d61bd398db3c0276.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/raphael/raphael-min.self-941b13323aa7867e65545caa1f27a7cb2e1b6a7346826fb2701e600a7f9fe885.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/sb-admin-2/sb-admin-2.self-d13000f5aac8081ed88b30a7a68c5e0a1cd2f6966087d86f3bb623e9183073be.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-8f656e10010f13d661c333ec222afca6f567507f4f767f26a381330465690cd0.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/notifyjs/notify.self-580979233c906abe103d95ccdbfe97994e5a03d69946ab5b2f74dc3a667fde52.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/notifyjs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/bootbox/bootbox.self-b5ca8f60fcb153e16cbf9b1576f9f12d827b26af705a98b8b7065bb59d2e6d8f.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/bootbox.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started GET "/assets/backoffice.self-c2391f307805ad269c5db10f363c9f3f70ce66ed8e9f5ac51bdb83482db7f837.js?body=1" for 127.0.0.1 at 2018-08-28 14:39:41 -0300
+
+
+Started POST "/admins/sign_in?role=form" for 127.0.0.1 at 2018-08-28 14:47:42 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"irvizZWtWKLxRkvJGJEwuN7XkcNJUYtxGQm8KLgVBFWV/ta4KHdh8dHss479srOG5rP1kaaegvAifwRexWOvCA==", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"irvizZWtWKLxRkvJGJEwuN7XkcNJUYtxGQm8KLgVBFWV/ta4KHdh8dHss479srOG5rP1kaaegvAifwRexWOvCA==", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+  Rendered admins/sessions/new.html.erb within layouts/backoffice_devise (10.0ms)
+Completed 200 OK in 270ms (Views: 269.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in?role=form" for 127.0.0.1 at 2018-08-28 15:00:56 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"irvizZWtWKLxRkvJGJEwuN7XkcNJUYtxGQm8KLgVBFWV/ta4KHdh8dHss479srOG5rP1kaaegvAifwRexWOvCA==", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+Completed 401 Unauthorized in 19ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"irvizZWtWKLxRkvJGJEwuN7XkcNJUYtxGQm8KLgVBFWV/ta4KHdh8dHss479srOG5rP1kaaegvAifwRexWOvCA==", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+  Rendered admins/sessions/new.html.erb within layouts/backoffice_devise (213.2ms)
+Completed 500 Internal Server Error in 256ms (ActiveRecord: 0.5ms)
+
+NameError - undefined local variable or method `valor' for #<#<Class:0x00007fd3ed750bc0>:0x00007fd3ed7687e8>:
+  app/views/admins/sessions/new.html.erb:34:in `block in _app_views_admins_sessions_new_html_erb__3277335587350552689_70274106200500'
+  app/views/admins/sessions/new.html.erb:32:in `_app_views_admins_sessions_new_html_erb__3277335587350552689_70274106200500'
+
+
+
+Started POST "/__better_errors/859af965db4d3097/variables" for 127.0.0.1 at 2018-08-28 15:01:00 -0300
+
+
+Started POST "/admins/sign_in?role=form" for 127.0.0.1 at 2018-08-28 15:01:36 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"irvizZWtWKLxRkvJGJEwuN7XkcNJUYtxGQm8KLgVBFWV/ta4KHdh8dHss479srOG5rP1kaaegvAifwRexWOvCA==", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"irvizZWtWKLxRkvJGJEwuN7XkcNJUYtxGQm8KLgVBFWV/ta4KHdh8dHss479srOG5rP1kaaegvAifwRexWOvCA==", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+  Rendered admins/sessions/new.html.erb within layouts/backoffice_devise (6.1ms)
+Completed 200 OK in 834ms (Views: 832.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-12a2063a215630107d4183f50348b529e7e6972401e8217325092cdcfd984ff8.css?body=1" for 127.0.0.1 at 2018-08-28 15:01:37 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:37 -0300
+
+
+Started GET "/assets/backoffice.self-df51fd9c6bc3af93c9e7bda279a8da1d7210fcd7a9d89014067b1889c43c48bc.css?body=1" for 127.0.0.1 at 2018-08-28 15:01:37 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-711ee0af6db03554b93fbc030102442ac36783b11e71952e6593dfb9c735208b.css?body=1" for 127.0.0.1 at 2018-08-28 15:01:37 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:37 -0300
+
+
+Started GET "/assets/font-awesome.self-2a86d2017f4b74f22943750b3b50b9cb753581bab96cbdaaf2df53f4c04c995b.css?body=1" for 127.0.0.1 at 2018-08-28 15:01:37 -0300
+
+
+Started GET "/assets/application.self-89655ea40500a342dad2ac571974c28abab3e3897c63fef4c2d06d7564836879.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:37 -0300
+
+
+Started GET "/assets/flot/excanvas.min.self-39a325f42722afab6a881d53103be4a76f999942a97f97d0fe15478af19519cd.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/flot/jquery.flot.self-c14ce1ecd2ce4c63225ea890baab32a8844dc3a9934549b5e9eb1161587a5ec6.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/flot/jquery.flot.pie.self-8be6563386a9e5a0257c552307e93734d4649757266413b50b11bdcc170ce86c.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/flot/jquery.flot.resize.self-75fb517c67caae33f5aea9880c10df2e4ddf7445480fbac96822be335943732b.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/flot/jquery.flot.time.self-d60994112d7402b1e199546f7b366bc2041b8544e32958099988299e25338894.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/flot/jquery.flot.tooltip.min.self-3345c66f1cdbff3552b69da0179c86e8efd5184c9fd13fef0b0fb91186e946ea.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/jquery/jquery.dataTables.min.self-67e5a542fa1b796f9c9dd66ef14d525d7ab93ebe0dbbba94feafe5326de5e303.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/bootstrap/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/bootstrap/dataTables.bootstrap.min.self-0cc74308cee62d36e05289fd12ce427717644593891ee3c8af1889482bd1623f.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/metis_menu/metisMenu.min.self-0db38256c73148671fb4a78e415b3cc67983c7ee20fdb697fcf4505c673c567d.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/morris/morris.min.self-4af92d7906a27d9873d17376c88128564082ab7acc6e7055d61bd398db3c0276.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/raphael/raphael-min.self-941b13323aa7867e65545caa1f27a7cb2e1b6a7346826fb2701e600a7f9fe885.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/sb-admin-2/sb-admin-2.self-d13000f5aac8081ed88b30a7a68c5e0a1cd2f6966087d86f3bb623e9183073be.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-8f656e10010f13d661c333ec222afca6f567507f4f767f26a381330465690cd0.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/notifyjs/notify.self-580979233c906abe103d95ccdbfe97994e5a03d69946ab5b2f74dc3a667fde52.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/notifyjs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/bootbox/bootbox.self-b5ca8f60fcb153e16cbf9b1576f9f12d827b26af705a98b8b7065bb59d2e6d8f.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/bootbox.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started GET "/assets/backoffice.self-c2391f307805ad269c5db10f363c9f3f70ce66ed8e9f5ac51bdb83482db7f837.js?body=1" for 127.0.0.1 at 2018-08-28 15:01:38 -0300
+
+
+Started POST "/admins/sign_in?role=form" for 127.0.0.1 at 2018-08-28 15:01:41 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xRrmsvam4l0/5jYP6p143UAwDrotYgc9Pku9n2cUTy7aX9LHS3zbDh9MzkgPvvvjeFRq6MKtDrwFPQXpGmLkcw==", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xRrmsvam4l0/5jYP6p143UAwDrotYgc9Pku9n2cUTy7aX9LHS3zbDh9MzkgPvvvjeFRq6MKtDrwFPQXpGmLkcw==", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+  Rendered admins/sessions/new.html.erb within layouts/backoffice_devise (8.5ms)
+Completed 200 OK in 144ms (Views: 143.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in?role=form" for 127.0.0.1 at 2018-08-28 15:01:55 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rFk+iuixKuMkFGansEzsohvpiYu78i7KgHLf/HKJM8SzHAr/VWsTsAS+nuBVb2+cI43t2VQ9J0u7BGeKD/+YmQ==", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rFk+iuixKuMkFGansEzsohvpiYu78i7KgHLf/HKJM8SzHAr/VWsTsAS+nuBVb2+cI43t2VQ9J0u7BGeKD/+YmQ==", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+  Rendered admins/sessions/new.html.erb within layouts/backoffice_devise (8.0ms)
+Completed 200 OK in 150ms (Views: 149.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in?role=form" for 127.0.0.1 at 2018-08-28 15:10:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BIn6zFX7qcXFHMhB8j2T0jtCi5WSbDGWTZqQ7WrnyMMbzM656CGQluW2MAYXHhDsAybvx32jOBd27CibF5Fjng==", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+Completed 401 Unauthorized in 20ms (ActiveRecord: 0.0ms)
+
+NoMethodError - undefined method `deep_symbolize_keys' for "Não foi possível salvar %{resource}: %{count} erros.":String:
+
+
+
+Started POST "/__better_errors/582202b7abe5a308/variables" for 127.0.0.1 at 2018-08-28 15:10:28 -0300
+
+
+Started POST "/admins/sign_in?role=form" for 127.0.0.1 at 2018-08-28 15:17:17 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BIn6zFX7qcXFHMhB8j2T0jtCi5WSbDGWTZqQ7WrnyMMbzM656CGQluW2MAYXHhDsAybvx32jOBd27CibF5Fjng==", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+Errno::ENOENT - No such file or directory @ rb_sysopen - /home/nouser/Projects/gamehub/config/locales/pt-BR.yml:
+
+
+
+Started POST "/__better_errors/8e38c62f41a25f73/variables" for 127.0.0.1 at 2018-08-28 15:17:20 -0300
+
+
+Started GET "/backoffice" for 127.0.0.1 at 2018-08-28 15:17:51 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Backoffice::DashboardController#index as HTML
+Completed 401 Unauthorized in 26ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2018-08-28 15:17:53 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered admins/sessions/new.html.erb within layouts/backoffice_devise (36.3ms)
+Completed 200 OK in 840ms (Views: 807.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/admins/sign_in?role=form" for 127.0.0.1 at 2018-08-28 15:18:00 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4Dx/zqGey1KmLAeQP0B3HsuKhaWnkNT23XdvkhVYvf7/eUu7HETyAYaG/9faY/Qg8+7h90hf3XfmAdfkaC4Wow==", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4Dx/zqGey1KmLAeQP0B3HsuKhaWnkNT23XdvkhVYvf7/eUu7HETyAYaG/9faY/Qg8+7h90hf3XfmAdfkaC4Wow==", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+  Rendered admins/sessions/new.html.erb within layouts/backoffice_devise (6.0ms)
+Completed 200 OK in 242ms (Views: 240.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in?role=form" for 127.0.0.1 at 2018-08-28 15:18:49 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VlByaQCm6k7MfObOflY7wA4V9R0svubHhoY/WTfEmLVJFUYcvXzTHezWHombdbj+NnGRT8Nx70a98IcvSrIz6A==", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+  [1m[35mAdmin Load (0.3ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."email" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["email", "admin@admin.com"]]
+Redirected to http://localhost:3000/backoffice
+Completed 302 Found in 492ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/backoffice" for 127.0.0.1 at 2018-08-28 15:18:49 -0300
+Processing by Backoffice::DashboardController#index as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered backoffice/dashboard/index.html.erb within layouts/backoffice (0.4ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (1.3ms)
+Completed 200 OK in 250ms (Views: 244.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/admins/sign_in?role=form" for 127.0.0.1 at 2018-08-28 15:19:44 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VlByaQCm6k7MfObOflY7wA4V9R0svubHhoY/WTfEmLVJFUYcvXzTHezWHombdbj+NnGRT8Nx70a98IcvSrIz6A==", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "role"=>"form"}
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-28 15:19:44 -0300
+Processing by Site::HomeController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/home/index.html.erb within layouts/site (7.3ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.4ms)
+  Rendered layouts/site_shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 365ms (Views: 346.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/site.self-7e2fd02ba0cb78096b9bc64cadddb85d7e5efa7eefa83013adff63130d63e8b8.css?body=1" for 127.0.0.1 at 2018-08-28 15:19:44 -0300
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:19:44 -0300
+
+
+Started GET "/assets/bootstrap.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:19:44 -0300
+
+
+Started GET "/backoffice" for 127.0.0.1 at 2018-08-28 15:19:50 -0300
+Processing by Backoffice::DashboardController#index as HTML
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered backoffice/dashboard/index.html.erb within layouts/backoffice (0.1ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 153ms (Views: 148.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/backoffice/categories" for 127.0.0.1 at 2018-08-28 15:19:58 -0300
+Processing by Backoffice::CategoriesController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered backoffice/categories/index.html.erb within layouts/backoffice (4.2ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 168ms (Views: 165.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 15:20:12 -0300
+Processing by Backoffice::AdminsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (4.3ms)[0m  SELECT "admins".* FROM "admins"
+  Rendered backoffice/admins/index.html.erb within layouts/backoffice (12.0ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 214ms (Views: 159.8ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/backoffice/categories" for 127.0.0.1 at 2018-08-28 15:20:18 -0300
+Processing by Backoffice::CategoriesController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (2.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered backoffice/categories/index.html.erb within layouts/backoffice (7.1ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (3.8ms)
+Completed 200 OK in 184ms (Views: 179.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 15:20:24 -0300
+Processing by Backoffice::AdminsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT "admins".* FROM "admins"
+  Rendered backoffice/admins/index.html.erb within layouts/backoffice (10.6ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 163ms (Views: 159.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered admins/sessions/new.html.erb within layouts/backoffice_devise (3.0ms)
+Completed 200 OK in 98ms (Views: 96.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-12a2063a215630107d4183f50348b529e7e6972401e8217325092cdcfd984ff8.css?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/backoffice.self-df51fd9c6bc3af93c9e7bda279a8da1d7210fcd7a9d89014067b1889c43c48bc.css?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-711ee0af6db03554b93fbc030102442ac36783b11e71952e6593dfb9c735208b.css?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/font-awesome.self-2a86d2017f4b74f22943750b3b50b9cb753581bab96cbdaaf2df53f4c04c995b.css?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/application.self-89655ea40500a342dad2ac571974c28abab3e3897c63fef4c2d06d7564836879.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/flot/excanvas.min.self-39a325f42722afab6a881d53103be4a76f999942a97f97d0fe15478af19519cd.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/flot/jquery.flot.self-c14ce1ecd2ce4c63225ea890baab32a8844dc3a9934549b5e9eb1161587a5ec6.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/flot/jquery.flot.pie.self-8be6563386a9e5a0257c552307e93734d4649757266413b50b11bdcc170ce86c.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/flot/jquery.flot.resize.self-75fb517c67caae33f5aea9880c10df2e4ddf7445480fbac96822be335943732b.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/flot/jquery.flot.time.self-d60994112d7402b1e199546f7b366bc2041b8544e32958099988299e25338894.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/flot/jquery.flot.tooltip.min.self-3345c66f1cdbff3552b69da0179c86e8efd5184c9fd13fef0b0fb91186e946ea.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/jquery/jquery.dataTables.min.self-67e5a542fa1b796f9c9dd66ef14d525d7ab93ebe0dbbba94feafe5326de5e303.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/bootstrap/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/bootstrap/dataTables.bootstrap.min.self-0cc74308cee62d36e05289fd12ce427717644593891ee3c8af1889482bd1623f.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/metis_menu/metisMenu.min.self-0db38256c73148671fb4a78e415b3cc67983c7ee20fdb697fcf4505c673c567d.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/morris/morris.min.self-4af92d7906a27d9873d17376c88128564082ab7acc6e7055d61bd398db3c0276.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/raphael/raphael-min.self-941b13323aa7867e65545caa1f27a7cb2e1b6a7346826fb2701e600a7f9fe885.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/sb-admin-2/sb-admin-2.self-d13000f5aac8081ed88b30a7a68c5e0a1cd2f6966087d86f3bb623e9183073be.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-8f656e10010f13d661c333ec222afca6f567507f4f767f26a381330465690cd0.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/notifyjs/notify.self-580979233c906abe103d95ccdbfe97994e5a03d69946ab5b2f74dc3a667fde52.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/notifyjs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/bootbox/bootbox.self-b5ca8f60fcb153e16cbf9b1576f9f12d827b26af705a98b8b7065bb59d2e6d8f.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:40 -0300
+
+
+Started GET "/assets/bootbox.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:41 -0300
+
+
+Started GET "/assets/backoffice.self-c2391f307805ad269c5db10f363c9f3f70ce66ed8e9f5ac51bdb83482db7f837.js?body=1" for 127.0.0.1 at 2018-08-28 15:20:41 -0300
+
+
+Started GET "/backoffice/admins/1/edit" for 127.0.0.1 at 2018-08-28 15:34:21 -0300
+
+SyntaxError - syntax error, unexpected keyword_end, expecting end-of-input:
+  app/helpers/backoffice/admins_helper.rb:14:in `'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/backoffice_controller.rb:1:in `<top (required)>'
+  app/controllers/backoffice/admins_controller.rb:1:in `<top (required)>'
+
+
+
+Started POST "/__better_errors/e05c34e6bc9edd54/variables" for 127.0.0.1 at 2018-08-28 15:34:21 -0300
+
+
+Started GET "/backoffice/admins/1/edit" for 127.0.0.1 at 2018-08-28 15:35:55 -0300
+Processing by Backoffice::AdminsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered backoffice/admins/shared/_form.html.erb (30.3ms)
+  Rendered backoffice/admins/edit.html.erb within layouts/backoffice (32.3ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 302ms (Views: 233.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-12a2063a215630107d4183f50348b529e7e6972401e8217325092cdcfd984ff8.css?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/font-awesome.self-2a86d2017f4b74f22943750b3b50b9cb753581bab96cbdaaf2df53f4c04c995b.css?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-711ee0af6db03554b93fbc030102442ac36783b11e71952e6593dfb9c735208b.css?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/application.self-89655ea40500a342dad2ac571974c28abab3e3897c63fef4c2d06d7564836879.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/backoffice.self-df51fd9c6bc3af93c9e7bda279a8da1d7210fcd7a9d89014067b1889c43c48bc.css?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/flot/excanvas.min.self-39a325f42722afab6a881d53103be4a76f999942a97f97d0fe15478af19519cd.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/flot/jquery.flot.self-c14ce1ecd2ce4c63225ea890baab32a8844dc3a9934549b5e9eb1161587a5ec6.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/flot/jquery.flot.pie.self-8be6563386a9e5a0257c552307e93734d4649757266413b50b11bdcc170ce86c.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/flot/jquery.flot.resize.self-75fb517c67caae33f5aea9880c10df2e4ddf7445480fbac96822be335943732b.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/flot/jquery.flot.time.self-d60994112d7402b1e199546f7b366bc2041b8544e32958099988299e25338894.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/flot/jquery.flot.tooltip.min.self-3345c66f1cdbff3552b69da0179c86e8efd5184c9fd13fef0b0fb91186e946ea.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/jquery/jquery.dataTables.min.self-67e5a542fa1b796f9c9dd66ef14d525d7ab93ebe0dbbba94feafe5326de5e303.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/bootstrap/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/bootstrap/dataTables.bootstrap.min.self-0cc74308cee62d36e05289fd12ce427717644593891ee3c8af1889482bd1623f.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/metis_menu/metisMenu.min.self-0db38256c73148671fb4a78e415b3cc67983c7ee20fdb697fcf4505c673c567d.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/morris/morris.min.self-4af92d7906a27d9873d17376c88128564082ab7acc6e7055d61bd398db3c0276.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/raphael/raphael-min.self-941b13323aa7867e65545caa1f27a7cb2e1b6a7346826fb2701e600a7f9fe885.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/sb-admin-2/sb-admin-2.self-d13000f5aac8081ed88b30a7a68c5e0a1cd2f6966087d86f3bb623e9183073be.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-8f656e10010f13d661c333ec222afca6f567507f4f767f26a381330465690cd0.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/notifyjs/notify.self-580979233c906abe103d95ccdbfe97994e5a03d69946ab5b2f74dc3a667fde52.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:56 -0300
+
+
+Started GET "/assets/notifyjs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:57 -0300
+
+
+Started GET "/assets/bootbox/bootbox.self-b5ca8f60fcb153e16cbf9b1576f9f12d827b26af705a98b8b7065bb59d2e6d8f.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:57 -0300
+
+
+Started GET "/assets/bootbox.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:57 -0300
+
+
+Started GET "/assets/backoffice.self-c2391f307805ad269c5db10f363c9f3f70ce66ed8e9f5ac51bdb83482db7f837.js?body=1" for 127.0.0.1 at 2018-08-28 15:35:57 -0300
+
+
+Started GET "/templates/sb-admin/vendor/bootstrap/css/bootstrap.min.css.map" for 127.0.0.1 at 2018-08-28 15:36:41 -0300
+
+ActionController::RoutingError (No route matches [GET] "/templates/sb-admin/vendor/bootstrap/css/bootstrap.min.css.map"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /home/nouser/.rvm/rubies/ruby-2.3.7/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/nouser/.rvm/rubies/ruby-2.3.7/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/nouser/.rvm/rubies/ruby-2.3.7/lib/ruby/2.3.0/webrick/server.rb:314:in `block in start_thread'
+
+
+  Rendered /home/nouser/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/nouser/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.3ms)
+  Rendered /home/nouser/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.5ms)
+  Rendered /home/nouser/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/nouser/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (74.5ms)
+  Rendered /home/nouser/.rvm/gems/ruby-2.3.7/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/nouser/.rvm/gems/ruby-2.3.7/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/nouser/.rvm/gems/ruby-2.3.7/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/nouser/.rvm/gems/ruby-2.3.7/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/nouser/.rvm/gems/ruby-2.3.7/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (32.5ms)
+  Rendered /home/nouser/.rvm/gems/ruby-2.3.7/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/nouser/.rvm/gems/ruby-2.3.7/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/nouser/.rvm/gems/ruby-2.3.7/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (78.0ms)
+
+
+Started GET "/backoffice/admins/1/edit" for 127.0.0.1 at 2018-08-28 15:39:44 -0300
+Processing by Backoffice::AdminsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered backoffice/admins/shared/_form.html.erb (6.5ms)
+  Rendered backoffice/admins/edit.html.erb within layouts/backoffice (8.7ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 146ms (Views: 143.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-12a2063a215630107d4183f50348b529e7e6972401e8217325092cdcfd984ff8.css?body=1" for 127.0.0.1 at 2018-08-28 15:39:44 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:44 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:44 -0300
+
+
+Started GET "/assets/backoffice.self-df51fd9c6bc3af93c9e7bda279a8da1d7210fcd7a9d89014067b1889c43c48bc.css?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-711ee0af6db03554b93fbc030102442ac36783b11e71952e6593dfb9c735208b.css?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/font-awesome.self-2a86d2017f4b74f22943750b3b50b9cb753581bab96cbdaaf2df53f4c04c995b.css?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/application.self-89655ea40500a342dad2ac571974c28abab3e3897c63fef4c2d06d7564836879.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/flot/excanvas.min.self-39a325f42722afab6a881d53103be4a76f999942a97f97d0fe15478af19519cd.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/flot/jquery.flot.self-c14ce1ecd2ce4c63225ea890baab32a8844dc3a9934549b5e9eb1161587a5ec6.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/flot/jquery.flot.pie.self-8be6563386a9e5a0257c552307e93734d4649757266413b50b11bdcc170ce86c.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/flot/jquery.flot.resize.self-75fb517c67caae33f5aea9880c10df2e4ddf7445480fbac96822be335943732b.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/flot/jquery.flot.time.self-d60994112d7402b1e199546f7b366bc2041b8544e32958099988299e25338894.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/flot/jquery.flot.tooltip.min.self-3345c66f1cdbff3552b69da0179c86e8efd5184c9fd13fef0b0fb91186e946ea.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/jquery/jquery.dataTables.min.self-67e5a542fa1b796f9c9dd66ef14d525d7ab93ebe0dbbba94feafe5326de5e303.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/bootstrap/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/bootstrap/dataTables.bootstrap.min.self-0cc74308cee62d36e05289fd12ce427717644593891ee3c8af1889482bd1623f.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/metis_menu/metisMenu.min.self-0db38256c73148671fb4a78e415b3cc67983c7ee20fdb697fcf4505c673c567d.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/morris/morris.min.self-4af92d7906a27d9873d17376c88128564082ab7acc6e7055d61bd398db3c0276.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/raphael/raphael-min.self-941b13323aa7867e65545caa1f27a7cb2e1b6a7346826fb2701e600a7f9fe885.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/sb-admin-2/sb-admin-2.self-d13000f5aac8081ed88b30a7a68c5e0a1cd2f6966087d86f3bb623e9183073be.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-8f656e10010f13d661c333ec222afca6f567507f4f767f26a381330465690cd0.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/notifyjs/notify.self-580979233c906abe103d95ccdbfe97994e5a03d69946ab5b2f74dc3a667fde52.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/notifyjs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/bootbox/bootbox.self-b5ca8f60fcb153e16cbf9b1576f9f12d827b26af705a98b8b7065bb59d2e6d8f.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/bootbox.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/assets/backoffice.self-c2391f307805ad269c5db10f363c9f3f70ce66ed8e9f5ac51bdb83482db7f837.js?body=1" for 127.0.0.1 at 2018-08-28 15:39:45 -0300
+
+
+Started GET "/backoffice/admins/1/edit" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+Processing by Backoffice::AdminsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered backoffice/admins/shared/_form.html.erb (10.0ms)
+  Rendered backoffice/admins/edit.html.erb within layouts/backoffice (12.9ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 168ms (Views: 164.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-12a2063a215630107d4183f50348b529e7e6972401e8217325092cdcfd984ff8.css?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/font-awesome.self-2a86d2017f4b74f22943750b3b50b9cb753581bab96cbdaaf2df53f4c04c995b.css?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-711ee0af6db03554b93fbc030102442ac36783b11e71952e6593dfb9c735208b.css?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/backoffice.self-df51fd9c6bc3af93c9e7bda279a8da1d7210fcd7a9d89014067b1889c43c48bc.css?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/application.self-89655ea40500a342dad2ac571974c28abab3e3897c63fef4c2d06d7564836879.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/flot/excanvas.min.self-39a325f42722afab6a881d53103be4a76f999942a97f97d0fe15478af19519cd.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/flot/jquery.flot.self-c14ce1ecd2ce4c63225ea890baab32a8844dc3a9934549b5e9eb1161587a5ec6.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/flot/jquery.flot.pie.self-8be6563386a9e5a0257c552307e93734d4649757266413b50b11bdcc170ce86c.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/flot/jquery.flot.resize.self-75fb517c67caae33f5aea9880c10df2e4ddf7445480fbac96822be335943732b.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/flot/jquery.flot.time.self-d60994112d7402b1e199546f7b366bc2041b8544e32958099988299e25338894.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/flot/jquery.flot.tooltip.min.self-3345c66f1cdbff3552b69da0179c86e8efd5184c9fd13fef0b0fb91186e946ea.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/jquery/jquery.dataTables.min.self-67e5a542fa1b796f9c9dd66ef14d525d7ab93ebe0dbbba94feafe5326de5e303.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/bootstrap/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/bootstrap/dataTables.bootstrap.min.self-0cc74308cee62d36e05289fd12ce427717644593891ee3c8af1889482bd1623f.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/metis_menu/metisMenu.min.self-0db38256c73148671fb4a78e415b3cc67983c7ee20fdb697fcf4505c673c567d.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/morris/morris.min.self-4af92d7906a27d9873d17376c88128564082ab7acc6e7055d61bd398db3c0276.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/raphael/raphael-min.self-941b13323aa7867e65545caa1f27a7cb2e1b6a7346826fb2701e600a7f9fe885.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/sb-admin-2/sb-admin-2.self-d13000f5aac8081ed88b30a7a68c5e0a1cd2f6966087d86f3bb623e9183073be.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:13 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-8f656e10010f13d661c333ec222afca6f567507f4f767f26a381330465690cd0.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:14 -0300
+
+
+Started GET "/assets/notifyjs/notify.self-580979233c906abe103d95ccdbfe97994e5a03d69946ab5b2f74dc3a667fde52.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:14 -0300
+
+
+Started GET "/assets/notifyjs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:14 -0300
+
+
+Started GET "/assets/bootbox/bootbox.self-b5ca8f60fcb153e16cbf9b1576f9f12d827b26af705a98b8b7065bb59d2e6d8f.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:14 -0300
+
+
+Started GET "/assets/bootbox.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:14 -0300
+
+
+Started GET "/assets/backoffice.self-c2391f307805ad269c5db10f363c9f3f70ce66ed8e9f5ac51bdb83482db7f837.js?body=1" for 127.0.0.1 at 2018-08-28 15:40:14 -0300
+
+
+Started PATCH "/backoffice/admins/1" for 127.0.0.1 at 2018-08-28 15:40:23 -0300
+Processing by Backoffice::AdminsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oDAbFbJ8HVMnmq7Q+teiKwD6UlprOWLaot0zv6vt3goDyBGjpl+itv03rzwMyI3zBMXU2lFB2VudmbiYxqGEmw==", "admin"=>{"name"=>"Master Admin", "email"=>"admin@admin.com", "role"=>"full", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: role
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/backoffice/admins
+Completed 302 Found in 15ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 15:40:23 -0300
+Processing by Backoffice::AdminsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT "admins".* FROM "admins"
+  Rendered backoffice/admins/index.html.erb within layouts/backoffice (7.4ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 176ms (Views: 173.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 15:45:57 -0300
+
+SyntaxError - syntax error, unexpected keyword_end, expecting end-of-input:
+  app/helpers/backoffice/admins_helper.rb:11:in `'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/backoffice_controller.rb:1:in `<top (required)>'
+  app/controllers/backoffice/admins_controller.rb:1:in `<top (required)>'
+
+
+
+Started POST "/__better_errors/9affaa392a362859/variables" for 127.0.0.1 at 2018-08-28 15:45:57 -0300
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+Processing by Backoffice::AdminsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT "admins".* FROM "admins"
+  Rendered backoffice/admins/index.html.erb within layouts/backoffice (12.7ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 187ms (Views: 166.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-12a2063a215630107d4183f50348b529e7e6972401e8217325092cdcfd984ff8.css?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/font-awesome.self-2a86d2017f4b74f22943750b3b50b9cb753581bab96cbdaaf2df53f4c04c995b.css?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-711ee0af6db03554b93fbc030102442ac36783b11e71952e6593dfb9c735208b.css?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/application.self-89655ea40500a342dad2ac571974c28abab3e3897c63fef4c2d06d7564836879.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/backoffice.self-df51fd9c6bc3af93c9e7bda279a8da1d7210fcd7a9d89014067b1889c43c48bc.css?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/flot/excanvas.min.self-39a325f42722afab6a881d53103be4a76f999942a97f97d0fe15478af19519cd.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/flot/jquery.flot.self-c14ce1ecd2ce4c63225ea890baab32a8844dc3a9934549b5e9eb1161587a5ec6.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/flot/jquery.flot.pie.self-8be6563386a9e5a0257c552307e93734d4649757266413b50b11bdcc170ce86c.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/flot/jquery.flot.resize.self-75fb517c67caae33f5aea9880c10df2e4ddf7445480fbac96822be335943732b.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/flot/jquery.flot.time.self-d60994112d7402b1e199546f7b366bc2041b8544e32958099988299e25338894.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/flot/jquery.flot.tooltip.min.self-3345c66f1cdbff3552b69da0179c86e8efd5184c9fd13fef0b0fb91186e946ea.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/jquery/jquery.dataTables.min.self-67e5a542fa1b796f9c9dd66ef14d525d7ab93ebe0dbbba94feafe5326de5e303.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/bootstrap/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/bootstrap/dataTables.bootstrap.min.self-0cc74308cee62d36e05289fd12ce427717644593891ee3c8af1889482bd1623f.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/metis_menu/metisMenu.min.self-0db38256c73148671fb4a78e415b3cc67983c7ee20fdb697fcf4505c673c567d.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/morris/morris.min.self-4af92d7906a27d9873d17376c88128564082ab7acc6e7055d61bd398db3c0276.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/raphael/raphael-min.self-941b13323aa7867e65545caa1f27a7cb2e1b6a7346826fb2701e600a7f9fe885.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:07 -0300
+
+
+Started GET "/assets/sb-admin-2/sb-admin-2.self-d13000f5aac8081ed88b30a7a68c5e0a1cd2f6966087d86f3bb623e9183073be.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:08 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-8f656e10010f13d661c333ec222afca6f567507f4f767f26a381330465690cd0.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:08 -0300
+
+
+Started GET "/assets/notifyjs/notify.self-580979233c906abe103d95ccdbfe97994e5a03d69946ab5b2f74dc3a667fde52.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:08 -0300
+
+
+Started GET "/assets/notifyjs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:08 -0300
+
+
+Started GET "/assets/bootbox/bootbox.self-b5ca8f60fcb153e16cbf9b1576f9f12d827b26af705a98b8b7065bb59d2e6d8f.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:08 -0300
+
+
+Started GET "/assets/bootbox.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:08 -0300
+
+
+Started GET "/assets/backoffice.self-c2391f307805ad269c5db10f363c9f3f70ce66ed8e9f5ac51bdb83482db7f837.js?body=1" for 127.0.0.1 at 2018-08-28 15:47:08 -0300
+
+
+Started GET "/backoffice/admins/1/edit" for 127.0.0.1 at 2018-08-28 15:47:11 -0300
+Processing by Backoffice::AdminsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered backoffice/admins/shared/_form.html.erb (6.5ms)
+  Rendered backoffice/admins/edit.html.erb within layouts/backoffice (11.6ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (2.2ms)
+Completed 200 OK in 173ms (Views: 170.2ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/backoffice/admins/1" for 127.0.0.1 at 2018-08-28 15:48:32 -0300
+Processing by Backoffice::AdminsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PGHUf3FNqfQfDZerc2cDpZWzMYSRilPThl92iqwbltafmd7JZW4WEcWglkeFeCx9kYy3BKvy6FK5G/2twVfMRw==", "admin"=>{"name"=>"Master Admin", "email"=>"admin@admin.com", "role"=>"full", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.3ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/backoffice/admins
+Completed 302 Found in 42ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 15:48:33 -0300
+Processing by Backoffice::AdminsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT "admins".* FROM "admins"
+  Rendered backoffice/admins/index.html.erb within layouts/backoffice (20.4ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 197ms (Views: 190.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/backoffice/admins/4/edit" for 127.0.0.1 at 2018-08-28 15:48:41 -0300
+Processing by Backoffice::AdminsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered backoffice/admins/shared/_form.html.erb (5.8ms)
+  Rendered backoffice/admins/edit.html.erb within layouts/backoffice (9.3ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 158ms (Views: 154.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/backoffice/admins/4" for 127.0.0.1 at 2018-08-28 15:48:44 -0300
+Processing by Backoffice::AdminsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"48DUR8FJcSkTVp39x53McL0fz6mp55x1LJbL3BzJAk9AON7x1WrOzMn7nBExguOouSBJKZOfJ/QT0kD7cYVY3g==", "admin"=>{"name"=>"Hoyt Lehner Jr.", "email"=>"anderson@sporergerhold.info", "role"=>"restricted", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "id"=>"4"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  UPDATE "admins" SET "role" = ?, "updated_at" = ? WHERE "admins"."id" = ?  [["role", 1], ["updated_at", "2018-08-28 18:48:44.555654"], ["id", 4]]
+  [1m[36m (220.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/backoffice/admins
+Completed 302 Found in 234ms (ActiveRecord: 224.8ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-28 15:48:44 -0300
+Processing by Backoffice::AdminsController#index as HTML
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT "admins".* FROM "admins"[0m
+  Rendered backoffice/admins/index.html.erb within layouts/backoffice (11.6ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (2.8ms)
+Completed 200 OK in 200ms (Views: 197.5ms | ActiveRecord: 0.3ms)

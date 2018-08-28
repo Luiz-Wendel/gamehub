@@ -59,7 +59,7 @@ class Backoffice::AdminsController < BackofficeController
       params[:admin].except!(:password, :password_confirmation) # Ignora as senhas para poder atualizar o email do administrador
     end
 
-      params.require(:admin).permit(:name, :email, :password, :password_confirmation) # Libera os parâmetros
+      params.require(:admin).permit(:name, :email, :role, :password, :password_confirmation) # Libera os parâmetros
     end
 
     def set_admin
