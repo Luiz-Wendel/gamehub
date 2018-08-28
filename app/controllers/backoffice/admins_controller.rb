@@ -3,7 +3,7 @@ class Backoffice::AdminsController < BackofficeController
   before_action :set_admin, only: [:edit, :update, :destroy] # Seta a categoria para as ações 'edit' e 'update'
 
   # After Actions
-  after_action :verify_authorized, only: :new # Verifica se foi autorizado (caso alguém apague ou comente a linha de autorização na definição)
+  after_action :verify_authorized, only: [:new, :destroy] # Verifica se foi autorizado (caso alguém apague ou comente a linha de autorização na definição)
   after_action :verify_policy_scoped, only: :index # Verifica se o escopo foi utilizado
 
   def index
@@ -39,6 +39,7 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def destroy
+    authorize @admin
     admin_name = @admin.name
 
     if @admin.destroy
