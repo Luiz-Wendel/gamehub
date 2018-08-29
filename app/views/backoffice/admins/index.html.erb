@@ -23,8 +23,8 @@
                     <tr>
                         <th>#</th>
                         <th>Nome</th>
-                        <th>Email</th>
                         <th>Acesso</th>
+                        <th class="th-ico">Contactar</th>
                         <th class="th-ico">Editar</th>
                         <th class="th-ico">Excluir</th>
                     </tr>
@@ -34,8 +34,12 @@
                     <tr>
                         <td class="td-id"><%= admin.id %></td>
                         <td><%= admin.name %></td>
-                        <td><%= admin.email %></td>
                         <td><%= admin.role_i18n %></td>
+                        <td class="td-ico">
+                            <%= link_to edit_backoffice_send_mail_path(admin.id), class: "btn btn-info btn-circle", remote: true do %>
+                                <i class="fa fa-envelope"></i>
+                            <% end %>
+                        </td>
                         <td class="td-ico">
                             <%= link_to edit_backoffice_admin_path(admin.id), class: "btn btn-primary btn-circle" do %>
                                 <i class="fa fa-edit"></i>
@@ -62,3 +66,5 @@
     <!-- /.panel-body -->
 </div>
 <!-- panel-default -->
+
+<%= render partial: 'backoffice/admins/shared/send_mail' %>

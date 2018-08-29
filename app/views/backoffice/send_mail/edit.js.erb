@@ -1,0 +1,10 @@
+$(function(){ // Garante que a página tenha sido completamente carregada para executar as querys
+  let $sendMailModal = $('#sendMailModal');
+
+  $('#recipient-text').val('<%= @admin.email %>'); // Colocando o e-mail no campo
+  $('h4.modal-title').text('Nova mensagem para: ' + '<%= @admin.name %>'); // Colocando o nome no título
+  $sendMailModal.modal(); // Mostra o modal
+  $sendMailModal.on('shown.bs.modal', function() { // Coloca o foco no campo
+    $('#subject-text').focus();
+  })
+});

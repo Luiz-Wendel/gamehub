@@ -1,0 +1,8 @@
+$(function(){
+  $('#sendMailModal').modal('hide'); // Esconde o modal
+
+  $('#subject-text').val(''); // Reseta o valor do campo
+  $('#message-text').val(''); // Reseta o valor do campo
+
+  $.notify('Email enviado com sucesso!', "success") // Mostra a mensagem de sucesso
+});
