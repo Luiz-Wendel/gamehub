@@ -4,5 +4,5 @@ $(function(){
   $('#subject-text').val(''); // Reseta o valor do campo
   $('#message-text').val(''); // Reseta o valor do campo
 
-  $.notify('Email enviado com sucesso!', "success") // Mostra a mensagem de sucesso
+  $.notify('<%= @notify_message %>', '<%= @notify_flag %>') // Mostra a mensagem de sucesso
 });
