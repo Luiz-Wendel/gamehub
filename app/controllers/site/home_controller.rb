@@ -2,7 +2,7 @@ class Site::HomeController < ApplicationController
 	layout "site"
 
   def index
-  	@categories = Category.order(:description) # Pega todas a categorias ordenadas de forma ascendente conforme a descrição
-    @ads = Ad.limit(5).order(created_at: :desc) # Pega cinco anúnicos ordenados de forma descendente conforme a data de criação
+  	@categories = Category.order_by_description # Chama o scope 'order_by_description' do model 'category.rb'
+    @ads = Ad.last_six # Chama o scope 'last_six' do model 'ad.rb'
   end
 end
