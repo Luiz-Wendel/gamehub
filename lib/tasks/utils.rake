@@ -2,15 +2,18 @@ namespace :utils do
 
   desc "Gerar ambiente de desenvolvimento"
   task setup_dev: :environment do
+    images_path = Rails.root.join('public', 'system')
+
     puts "Gerando o ambiente de desenvolvimento..."
 
-   puts "Apagando o banco de dados... #{%x(rake db:drop)}"
-   puts "Criando o banco de dados #{%x(rake db:create)}"
-   puts %x(rake db:migrate)
-   puts %x(rake db:seed)
-   puts %x(rake utils:generate_admins)
-   puts %x(rake utils:generate_members)
-   puts %x(rake utils:generate_ads)
+    puts "Apagando o banco de dados... #{%x(rake db:drop)}"
+    puts "Apagando imagens de public/system... #{%x(rm -rf #{images_path})}"
+    puts "Criando o banco de dados... #{%x(rake db:create)}"
+    puts %x(rake db:migrate)
+    puts %x(rake db:seed)
+    puts %x(rake utils:generate_admins)
+    puts %x(rake utils:generate_members)
+    puts %x(rake utils:generate_ads)
 
     puts "Gerando o ambiente de desenvolvimento...[OK]"
   end

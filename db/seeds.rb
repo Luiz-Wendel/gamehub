@@ -46,3 +46,13 @@ puts "Cadastrando o Administrador Padrão..."
 								role: 0)
 
 puts "Cadastrando o Administrador Padrão...[OK]"
+
+#######################################################
+
+puts "Cadastrando o Membro Padrão..."
+
+	Member.create!(email: "member@member.com",
+								 password: "member321",
+								 password_confirmation: "member321")
+
+puts "Cadastrando o Membro Padrão...[OK]"
