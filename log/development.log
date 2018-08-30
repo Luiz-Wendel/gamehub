@@ -24940,3 +24940,165 @@ Content-Transfer-Encoding: 7bit
 
   Rendered backoffice/send_mail/create.js.erb (0.1ms)
 Completed 200 OK in 124ms (Views: 14.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-30 14:59:42 -0300
+Processing by Backoffice::AdminsController#index as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (7.4ms)[0m  SELECT "admins".* FROM "admins"
+  Rendered backoffice/admins/shared/_send_mail_modal.html.erb (1.7ms)
+  Rendered backoffice/admins/index.html.erb within layouts/backoffice (20.2ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 210ms (Views: 176.0ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/assets/application.self-12a2063a215630107d4183f50348b529e7e6972401e8217325092cdcfd984ff8.css?body=1" for 127.0.0.1 at 2018-08-30 14:59:42 -0300
+
+
+Started GET "/assets/font-awesome.self-2a86d2017f4b74f22943750b3b50b9cb753581bab96cbdaaf2df53f4c04c995b.css?body=1" for 127.0.0.1 at 2018-08-30 14:59:42 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-711ee0af6db03554b93fbc030102442ac36783b11e71952e6593dfb9c735208b.css?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/backoffice.self-df51fd9c6bc3af93c9e7bda279a8da1d7210fcd7a9d89014067b1889c43c48bc.css?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/application.self-89655ea40500a342dad2ac571974c28abab3e3897c63fef4c2d06d7564836879.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/flot/excanvas.min.self-39a325f42722afab6a881d53103be4a76f999942a97f97d0fe15478af19519cd.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/flot/jquery.flot.self-c14ce1ecd2ce4c63225ea890baab32a8844dc3a9934549b5e9eb1161587a5ec6.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/flot/jquery.flot.pie.self-8be6563386a9e5a0257c552307e93734d4649757266413b50b11bdcc170ce86c.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/flot/jquery.flot.resize.self-75fb517c67caae33f5aea9880c10df2e4ddf7445480fbac96822be335943732b.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/flot/jquery.flot.time.self-d60994112d7402b1e199546f7b366bc2041b8544e32958099988299e25338894.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/flot/jquery.flot.tooltip.min.self-3345c66f1cdbff3552b69da0179c86e8efd5184c9fd13fef0b0fb91186e946ea.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/jquery/jquery.dataTables.min.self-67e5a542fa1b796f9c9dd66ef14d525d7ab93ebe0dbbba94feafe5326de5e303.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/bootstrap/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/bootstrap/dataTables.bootstrap.min.self-0cc74308cee62d36e05289fd12ce427717644593891ee3c8af1889482bd1623f.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/metis_menu/metisMenu.min.self-0db38256c73148671fb4a78e415b3cc67983c7ee20fdb697fcf4505c673c567d.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/morris/morris.min.self-4af92d7906a27d9873d17376c88128564082ab7acc6e7055d61bd398db3c0276.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/raphael/raphael-min.self-941b13323aa7867e65545caa1f27a7cb2e1b6a7346826fb2701e600a7f9fe885.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/sb-admin-2/sb-admin-2.self-d13000f5aac8081ed88b30a7a68c5e0a1cd2f6966087d86f3bb623e9183073be.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-8f656e10010f13d661c333ec222afca6f567507f4f767f26a381330465690cd0.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/notifyjs/notify.self-580979233c906abe103d95ccdbfe97994e5a03d69946ab5b2f74dc3a667fde52.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/notifyjs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/bootbox/bootbox.self-b5ca8f60fcb153e16cbf9b1576f9f12d827b26af705a98b8b7065bb59d2e6d8f.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/bootbox.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/assets/backoffice.self-c2391f307805ad269c5db10f363c9f3f70ce66ed8e9f5ac51bdb83482db7f837.js?body=1" for 127.0.0.1 at 2018-08-30 14:59:43 -0300
+
+
+Started GET "/backoffice/admins/1/edit" for 127.0.0.1 at 2018-08-30 14:59:50 -0300
+Processing by Backoffice::AdminsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered backoffice/admins/shared/_form.html.erb (2.9ms)
+  Rendered backoffice/admins/edit.html.erb within layouts/backoffice (8.5ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 174ms (Views: 166.2ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/backoffice/admins/1" for 127.0.0.1 at 2018-08-30 14:59:54 -0300
+Processing by Backoffice::AdminsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WIhPM5TZLBfBNZNquoAH2sxl1L4ySj1ELP2UO5+sQ/cM8yAfmdJoHUoM2gmUHVy53xAbf8nfHLJKGLN4pzL4xg==", "admin"=>{"name"=>"Master Admin", "email"=>"admin@admin.com", "role"=>"full", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  Rendered admin_mailer/update_email.html.erb within layouts/mailer (0.4ms)
+  Rendered admin_mailer/update_email.text.erb within layouts/mailer (0.4ms)
+
+AdminMailer#update_email: processed outbound mail in 40.3ms
+
+Sent mail to admin@admin.com (32.7ms)
+Date: Thu, 30 Aug 2018 14:59:54 -0300
+From: noreply@gamehub.com
+To: admin@admin.com
+Message-ID: <5b88309ad0a62_1d2ba9b0b488759@nouser-VirtualBox.mail>
+Subject: Seus dados foram alterados!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5b88309acd37e_1d2ba9b0b488611";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5b88309acd37e_1d2ba9b0b488611
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Master Admin,
+Seus dados foram atualizados por Master Admin.
+
+
+----==_mimepart_5b88309acd37e_1d2ba9b0b488611
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h3>Master Admin,</h3>
+<p>Seus dados foram atualizados por <b>Master Admin</b>.</p>
+
+  </body>
+</html>
+
+----==_mimepart_5b88309acd37e_1d2ba9b0b488611--
+
+Redirected to http://localhost:3000/backoffice/admins
+Completed 302 Found in 112ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/backoffice/admins" for 127.0.0.1 at 2018-08-30 14:59:54 -0300
+Processing by Backoffice::AdminsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdmin Load (0.3ms)[0m  SELECT "admins".* FROM "admins"
+  Rendered backoffice/admins/shared/_send_mail_modal.html.erb (3.1ms)
+  Rendered backoffice/admins/index.html.erb within layouts/backoffice (19.3ms)
+  Rendered layouts/backoffice_shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 206ms (Views: 201.5ms | ActiveRecord: 0.4ms)
