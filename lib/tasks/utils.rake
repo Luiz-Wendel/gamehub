@@ -22,7 +22,7 @@ namespace :utils do
     100.times do
       Ad.create!(
         title: Faker::Lorem.sentence([2,3,4].sample), # Gera um título com 2 a 5 sentenças
-        description: LeroleroGenerator.paragraph(Random.ran(3)), # Gera uma descrição com 1 a 3 parágrafos
+        description: LeroleroGenerator.paragraph(Random.rand(3)), # Gera uma descrição com 1 a 3 parágrafos
         member: Member.all.sample, # Sorteia um membro aleatório
         category: Category.all.sample) # Sorteia uma categoria aleatória
     end
