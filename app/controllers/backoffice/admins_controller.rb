@@ -65,7 +65,11 @@ class Backoffice::AdminsController < BackofficeController
         params[:admin].except!(:password, :password_confirmation) # Ignora as senhas para poder atualizar o email do administrador
       end
 
-      params.require(:admin).permit(policy(@admin).permitted_attributes) # Libera os parâmetros conforme o tipo de adm definidos na 'admin_policy.rb'
+      if @admin.blank?
+        params.require(:admin).permit(:name, :email, :role, :password, :password_blank)
+      else
+        params.require(:admin).permit(policy(@admin).permitted_attributes)
+      end
     end
 
     def password_blank? # Verifica se as senhas estão vindo vazias do formulário
