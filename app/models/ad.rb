@@ -5,7 +5,8 @@ class Ad < ActiveRecord::Base
   validates_presence_of :title
 
 # Scope
-  scope :last_six, -> { limit(6).order(created_at: :desc) } # Pega cinco anúnicos ordenados de forma descendente conforme a data de criação
+  scope :descending_order, ->(quantity = 10) { limit(quantity).order(created_at: :desc) } # Pega cinco anúnicos ordenados de forma descendente conforme a data de criação
+  scope :to_member, ->(member) { where(member: member) } # Pega os anúncios de um membro
 
   # Configuração da gem 'paperclip'
   has_attached_file :picture, styles: { medium: "254x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
