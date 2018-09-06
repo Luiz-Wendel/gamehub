@@ -7,6 +7,7 @@
     <th>Título</th>
     <th>Categoria</th>
     <th>Preço</th>
+    <th>Editar</th>
   </thead>
   <tbody>
     <% @ads.each do |ad| %>
@@ -16,6 +17,11 @@
         <th><%= ad.title %></th>
         <th><%= ad.category.description %></th>
         <th><%= humanized_money_with_symbol ad.price %></th>
+        <th>
+          <%= link_to edit_site_profile_ad_path(ad.id), class:"btn btn-primary btn-small" do %>
+            <span></span>
+          <% end %>
+        </th>
       </tr>
     <% end %>
   </tbody>
