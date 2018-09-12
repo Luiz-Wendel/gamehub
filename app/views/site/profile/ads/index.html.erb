@@ -2,26 +2,28 @@
 
 <table class="table table-hover">
   <thead>
-    <th>#</th>
-    <th>Imagem</th>
-    <th>Título</th>
-    <th>Categoria</th>
-    <th>Preço</th>
-    <th>Editar</th>
+    <tr>
+      <th>#</th>
+      <th>Imagem</th>
+      <th>Título</th>
+      <th>Categoria</th>
+      <th>Preço</th>
+      <th>Editar</th>
+    </tr>
   </thead>
   <tbody>
     <% @ads.each do |ad| %>
       <tr>
-        <th scope="row"><%= ad.id %></th>
-        <th><%= image_tag ad.picture(:thumb) %></th>
-        <th><%= ad.title %></th>
-        <th><%= ad.category.description %></th>
-        <th><%= humanized_money_with_symbol ad.price %></th>
-        <th>
-          <%= link_to edit_site_profile_ad_path(ad.id), class:"btn btn-primary btn-small" do %>
-            <span></span>
+        <td><%= ad.id %></td>
+        <td><%= image_tag ad.picture(:thumb) %></td>
+        <td><%= ad.title %></td>
+        <td><%= ad.category.description %></td>
+        <td><%= humanized_money_with_symbol ad.price %></td>
+        <td class="td-ico">
+          <%= link_to edit_site_profile_ad_path(ad.id), class: "btn btn-primary btn-sm circle-btn" do %>
+            <i class="fa fa-edit img-center"></i>
           <% end %>
-        </th>
+        </td>
       </tr>
     <% end %>
   </tbody>

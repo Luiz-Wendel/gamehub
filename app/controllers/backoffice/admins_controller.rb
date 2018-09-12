@@ -1,13 +1,14 @@
 class Backoffice::AdminsController < BackofficeController
   # Before Actions
   before_action :set_admin, only: [:edit, :update, :destroy] # Seta a categoria para as ações 'edit' e 'update'
+  before_action :save_admin_name, only: [:update, :destroy]
 
   # After Actions
   after_action :verify_authorized, only: [:new, :destroy] # Verifica se foi autorizado (caso alguém apague ou comente a linha de autorização na definição)
   after_action :verify_policy_scoped, only: :index # Verifica se o escopo foi utilizado
 
   # Variáveis
-  @@saved_admin_name
+  @@saved_admin_name = ""
 
   def index
     @admins = policy_scope(Admin) # Verifica, através do escopo do Pundit, quais Administradores devem ser mostrados
@@ -22,17 +23,17 @@ class Backoffice::AdminsController < BackofficeController
     @admin = Admin.new(params_admin) # Cria um novo administrador com o parâmetro
     if @admin.save
       redirect_to backoffice_admins_path,
-        notice: "O Administrador (#{@admin.email}) foi incluído com sucesso!" # Redireciona enviando uma mensagem de sucesso
+        notice: "O Administrador (#{@admin.name}) foi incluído com sucesso!" # Redireciona enviando uma mensagem de sucesso
     else
       render :new
     end
   end
 
   def edit
+    #
   end
 
   def update
-    save_admin_name
     if @admin.update(params_admin)
       AdminMailer.update_email(current_admin, @admin, @@saved_admin_name).deliver_now # Manda um email para o administrador que teve seus dados alterados
       redirect_to backoffice_admins_path,
@@ -44,7 +45,6 @@ class Backoffice::AdminsController < BackofficeController
 
   def destroy
     authorize @admin
-    save_admin_name
 
     if @admin.destroy
       redirect_to backoffice_admins_path,

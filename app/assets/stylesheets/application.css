@@ -18,9 +18,14 @@
 }
 
 .td-ico, .th-ico {
-  width: 75px;
+  height: 60px;
+  width: 60px;
   text-align: center;
   margin: auto;
+}
+
+.img-center {
+  vertical-align: middle;
 }
 
 .table-app > thead > tr > th, .table-app > tbody > tr > th, .table-app > tfoot > tr > th,

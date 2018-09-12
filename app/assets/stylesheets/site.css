@@ -1,5 +1,6 @@
 /*
  *= require bootstrap
+ *= require font-awesome
  */
 
 /*!
@@ -16,4 +17,8 @@ body {
   body {
     padding-top: 56px;
   }
+}
+
+.circle-btn {
+  border-radius: 50%;
 }
