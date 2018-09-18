@@ -39,10 +39,12 @@ gem 'coffee-rails', '~> 4.1.0'
 source 'https://rails-assets.org' do
   # Wrappers for JavaScript alert(), confirm() and other flexible dialogs using Twitter's bootstrap framework http://bootboxjs.com
   gem 'rails-assets-bootbox'
-  # A handy wrapper for the Web Notifications API
-  gem 'rails-assets-notifyjs'
+  # This is a simple plugin that turns standard Bootstrap alerts into "Growl-like" notifications.
+  gem 'rails-assets-bootstrap.growl'
   # gem do bootstrap do site rails-assets.org
   gem 'rails-assets-bootstrap'
+  # Animate CSS, https://github.com/daneden/animate.css
+  gem 'rails-assets-animate-css'
 end
 
 # Use jquery as the JavaScript library
