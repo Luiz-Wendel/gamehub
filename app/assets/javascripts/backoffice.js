@@ -1,5 +1,4 @@
 //= require bootstrap_sb_admin_base_v2
-//= require notifyjs
 //= require bootbox
 
 //Função para sobrescrever a caixa de confirmação gerada pelo 'confirm()'

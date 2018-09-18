@@ -2,9 +2,10 @@ class Ad < ActiveRecord::Base
   belongs_to :category
   belongs_to :member
 
-  validates_presence_of :title
+  # Validates
+  validates_presence_of :title, :description, :category, :price, :picture
 
-# Scope
+  # Scope
   scope :descending_order, ->(quantity = 10) { limit(quantity).order(created_at: :desc) } # Pega cinco anúnicos ordenados de forma descendente conforme a data de criação
   scope :to_member, ->(member) { where(member: member) } # Pega os anúncios de um membro
 
