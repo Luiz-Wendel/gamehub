@@ -39,5 +39,9 @@
         updated_at: Atualizado em
         title: Título
         description: Descrição
+        price: Preço
+        category: Categoria
+        picture: Imagem
         member_id: Código do usuário
         category_id: Código da categoria
+        finish_date: Data de finalização

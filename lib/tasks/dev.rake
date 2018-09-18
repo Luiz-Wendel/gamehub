@@ -51,15 +51,16 @@ namespace :dev do
   desc "Cria Anúncios fakes"
   task generate_ads: :environment do
     puts "Cadastrando Anúncios..."
-    
+
     # Membro padrão
     5.times do
       Ad.create!(
         title: Faker::Lorem.sentence([2,3,4].sample),
-        description: LeroleroGenerator.paragraph(Random.rand(3)),
+        description: LeroleroGenerator.paragraph([1,2,3].sample),
         member: Member.first,
         category: Category.all.sample,
         price: "#{Random.rand(9999)},#{Random.rand(99)}",
+        finish_date: Date.today + Random.rand(90),
         picture: File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
         )
     end
@@ -68,10 +69,11 @@ namespace :dev do
     100.times do
       Ad.create!(
         title: Faker::Lorem.sentence([2,3,4].sample), # Gera um título com 2 a 5 sentenças
-        description: LeroleroGenerator.paragraph(Random.rand(3)), # Gera uma descrição com 1 a 3 parágrafos
+        description: LeroleroGenerator.paragraph([1,2,3].sample), # Gera uma descrição com 1 a 3 parágrafos
         member: Member.all.sample, # Sorteia um membro aleatório
         category: Category.all.sample, # Sorteia uma categoria aleatória
         price: "#{Random.rand(9999)},#{Random.rand(99)}", # Gera um valor aleatório entra 0,0 e 9999,99
+        finish_date: Date.today + Random.rand(90), # Gera uma data aleatória entre a data atual e daqui a 90 dias
         picture: File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r') # Gera um caminho de uma imagem
         )
     end
