@@ -3,7 +3,7 @@
 
   <div class="row">
 
-    <div class="col-lg-3">
+    <div id="home-sidebar" class="col-lg-3">
 
       <h1 class="my-4">Categorias</h1>
       <div class="list-group">
@@ -15,7 +15,7 @@
     </div>
     <!-- /.col-lg-3 -->
 
-    <div class="col-lg-9">
+    <div id="home-detail" class="col-lg-9">
 
       <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -52,7 +52,8 @@
               <a href="#"><%= image_tag ad.picture.url(:medium) %></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#"><%= truncate(ad.title, length: 30) %></a>
+                  <%= link_to truncate(ad.title, length: 30), site_ad_detail_path(ad), remote: true %>
+                  <a href="#"><%=  %></a>
                 </h4>
                 <h5><%= humanized_money_with_symbol ad.price %></h5>
                 <p class="card-text"><%= truncate(ad.description, length: 100) %></p>

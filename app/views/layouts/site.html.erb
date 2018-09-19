@@ -17,6 +17,8 @@
   </head>
 
   <body>
+    <div id="global-spin" class="loading" style="display: none;">Loading&#8230;</div>
+
     <%= render partial: "layouts/site_shared/navigation" %> <!-- Renderiza a barra de navegação da página -->
     <%= yield %>
     <%= render partial: "layouts/site_shared/footer" %> <!-- Renderiza o rodapé da página -->
