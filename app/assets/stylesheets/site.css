@@ -10,30 +10,26 @@
  */
 
 .carousel {
-  margin: 20px 10px 20px 5px;
+  margin: 20px auto;
+  max-width: 900px;
 }
 
- .footer-dark, .navbar-dark, .navbar-dark > a, .navbar-dark > div > ul > li > a {
+.center {
+  text-align: center;
+}
+
+.center-list {
+  width:  200px;
+  margin: 0 auto;
+}
+
+.footer-dark, .navbar-dark, .navbar-dark > a, .navbar-dark > div > ul > li > a {
     background-color: #343A40;
     color:  #999;
 }
 
-.vertical-center {
-  min-height: 100%;
-  min-height: 100vh;
-
-  display: flex;
-  align-items: center;
-}
-
 body {
-  padding-top: 54px;
-}
-
-@media (min-width: 992px) {
-  body {
-    padding-top: 50px;
-  }
+  padding-top: 50px;
 }
 
 .circle-btn {
