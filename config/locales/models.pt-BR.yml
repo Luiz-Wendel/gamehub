@@ -39,6 +39,8 @@
         updated_at: Atualizado em
         title: Título
         description: Descrição
+        description_md: Descrição/Markdown
+        description_short: Breve descrição
         price: Preço
         category: Categoria
         picture: Imagem

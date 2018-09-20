@@ -1,48 +1,65 @@
-<!-- Page Content -->
-<div class="container">
+<div id="home-sidebar" class="col-lg-3">
+
+  <h1 class="my-4">Categorias</h1>
+  <div class="list-group">
+    <% @categories.each do |category| %>
+      <a href="#" class="list-group-item"><%= category.description %></a>
+    <% end %>
+  </div>
+
+</div>
+<!-- /.col-lg-3 -->
+
+<div class="container vertical-center">
 
   <div class="row">
 
-    <div id="home-sidebar" class="col-lg-3">
-
-      <h1 class="my-4">Categorias</h1>
-      <div class="list-group">
-        <% @categories.each do |category| %>
-          <a href="#" class="list-group-item"><%= category.description %></a>
-        <% end %>
-      </div>
-
-    </div>
-    <!-- /.col-lg-3 -->
-
     <div id="home-detail" class="col-lg-9">
 
-      <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
+
+        <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-          <div class="carousel-item active">
+          <div class="item active">
             <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+            <div class="carousel-caption">
+              <!-- <h1>Título</h1>
+                   <p>Descrição</p> -->
+            </div>
           </div>
-          <div class="carousel-item">
+          <div class="item">
             <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+            <div class="carousel-caption">
+              <!-- <h1>Título</h1>
+                   <p>Descrição</p> -->
+            </div>
           </div>
-          <div class="carousel-item">
+          <div class="item">
             <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+            <div class="carousel-caption">
+              <!-- <h1>Título</h1>
+                   <p>Descrição</p> -->
+            </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <!-- / .carousel -->
 
       <div class="row">
 
@@ -56,7 +73,7 @@
                   <a href="#"><%=  %></a>
                 </h4>
                 <h5><%= humanized_money_with_symbol ad.price %></h5>
-                <p class="card-text"><%= truncate(ad.description, length: 100) %></p>
+                <p class="card-text"><%= truncate(ad.description_short, length: 100) %></p>
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>

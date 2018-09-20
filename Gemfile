@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
+# The safe Markdown parser, reloaded.
+gem 'redcarpet'
 # jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
 # Easy file attachment management for ActiveRecord https://thoughtbot.com/open-source
@@ -37,6 +39,10 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 source 'https://rails-assets.org' do
+  # A markdown parser and compiler. Built for speed. https://marked.js.org/
+  gem 'rails-assets-marked'
+  # Bootstrap plugin for markdown editing
+  gem 'rails-assets-bootstrap-markdown'
   # Wrappers for JavaScript alert(), confirm() and other flexible dialogs using Twitter's bootstrap framework http://bootboxjs.com
   gem 'rails-assets-bootbox'
   # This is a simple plugin that turns standard Bootstrap alerts into "Growl-like" notifications.
@@ -66,6 +72,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # Markdown Lorem Ipsum generator
+  gem 'doctor_ipsum'
   # Catches mail and serves it through a dream. http://mailcatcher.me
   gem 'mailcatcher'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -56,7 +56,8 @@ namespace :dev do
     5.times do
       Ad.create!(
         title: Faker::Lorem.sentence([2,3,4].sample),
-        description: LeroleroGenerator.paragraph([1,2,3].sample),
+        description_md: markdown_fake,
+        description_short: Faker::Lorem.sentence([2,3].sample),
         member: Member.first,
         category: Category.all.sample,
         price: "#{Random.rand(9999)},#{Random.rand(99)}",
@@ -69,7 +70,8 @@ namespace :dev do
     100.times do
       Ad.create!(
         title: Faker::Lorem.sentence([2,3,4].sample), # Gera um título com 2 a 5 sentenças
-        description: LeroleroGenerator.paragraph([1,2,3].sample), # Gera uma descrição com 1 a 3 parágrafos
+        description_md: markdown_fake, # Gera uma descrição no formato markdown
+        description_short: Faker::Lorem.sentence([2,3].sample), # Gera uma descrição no formato markdown
         member: Member.all.sample, # Sorteia um membro aleatório
         category: Category.all.sample, # Sorteia uma categoria aleatória
         price: "#{Random.rand(9999)},#{Random.rand(99)}", # Gera um valor aleatório entra 0,0 e 9999,99
@@ -79,6 +81,10 @@ namespace :dev do
     end
 
     puts "Cadastrando Anúncios...[OK]"
+  end
+
+  def markdown_fake
+    %x(ruby -e "require 'doctor_ipsum'; puts DoctorIpsum::Markdown.entry")
   end
 
 end
