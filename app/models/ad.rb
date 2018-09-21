@@ -13,6 +13,7 @@ class Ad < ActiveRecord::Base
   # Scope
   scope :descending_order, ->(quantity = 10) { limit(quantity).order(created_at: :desc) } # Pega cinco anúnicos ordenados de forma descendente conforme a data de criação
   scope :to_member, ->(member) { where(member: member) } # Pega os anúncios de um membro
+  scope :by_category, ->(id) { where(category: id) } # Pega os anúncios de um membro
 
   # Configuração da gem 'paperclip'
   has_attached_file :picture, styles: { large: "800,300#", medium: "254x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"

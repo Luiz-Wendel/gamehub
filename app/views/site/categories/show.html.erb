@@ -1,0 +1,35 @@
+<%= render partial: 'site/shared/sidebar' %>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-1"></div>
+
+    <div id="home-detail" class="col-lg-10 center" style="margin-top: 50px;">
+
+      <div class="row">
+
+        <div class="panel panel-default" style="padding-top: 5px;">
+          <h4>
+            <strong>
+              <%= @category.description %>
+            </strong>
+          </h4>
+        </div>
+
+        <%= render partial: 'site/shared/ads' %>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.col-lg-9 -->
+
+    <div class="col-lg-1" style="margin-right:-40px;"></div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
