@@ -16,7 +16,7 @@ class Ad < ActiveRecord::Base
   scope :by_category, ->(id) { where(category: id) } # Pega os anúncios de um membro
 
   # Configuração da gem 'paperclip'
-  has_attached_file :picture, styles: { large: "800,300#", medium: "254x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :picture, styles: { large: "900,450#", medium: "254x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
   # Configuração da gem 'money-rails'

@@ -9,8 +9,12 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
  */
 
+ #home-detail {
+  margin-top: 50px;
+ }
+
 .carousel {
-  margin: 20px auto;
+  margin: 0 auto 20px auto;
   max-width: 900px;
 }
 

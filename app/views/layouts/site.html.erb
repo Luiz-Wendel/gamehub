@@ -20,7 +20,40 @@
     <div id="global-spin" class="loading" style="display: none;">Loading&#8230;</div>
 
     <%= render partial: "layouts/site_shared/navigation" %> <!-- Renderiza a barra de navegação da página -->
-    <%= yield %>
+
+    <%= render partial: 'layouts/site_shared/sidebar' %>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-1"></div>
+
+        <div id="home-detail" class="col-lg-10 center">
+
+          <% if controller_path == 'site/home' %>
+            <%= render partial: 'layouts/site_shared/carousel' %>
+          <% end %>
+
+          <div class="row">
+
+            <%= yield %>
+
+          </div>
+          <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+        <div class="col-lg-1" style="margin-right:-40px;"></div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+
     <%= render partial: "layouts/site_shared/footer" %> <!-- Renderiza o rodapé da página -->
 
     <%= javascript_include_tag 'application' %>
