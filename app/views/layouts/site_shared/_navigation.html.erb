@@ -1,6 +1,16 @@
 <!-- Navigation -->
 <nav class="navbar navbar-dark navbar-fixed-top" style="padding-right: 10px; margin-bottom: 0">
   <%= link_to t('app.name'), root_path, class: "navbar-brand" %>
+  
+  <%= form_tag site_search_path, method: :get, class: "navbar-form navbar-left", role: "search" do %>
+    <div class="input-group">
+      <%= text_field_tag(:q, params[:q] , {class: "form-control", placeholder: "Pesquisar..."}) %>
+      <span class="input-group-btn">
+        <%= submit_tag("Pesquisar", class: "btn btn-default") %>
+      </span>
+    </div>
+  <% end %>
+  
   <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="nav navbar-nav navbar-right">
       <% unless member_signed_in? %>

@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps https://github.com/amatsuda/kaminari/…
+gem 'kaminari'
+# Translations for the Kaminari gem
+gem 'kaminari-i18n'
 # If Turbolinks are not enough for you. Wiselinks makes your application work faster.
 gem 'wiselinks'
 # FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord. It allows you to create pretty URL’s and work with human-friendly strings as if they were numeric ids for ActiveRecord models. http://norman.github.io/friendly_id/

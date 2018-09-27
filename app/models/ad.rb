@@ -1,4 +1,7 @@
 class Ad < ActiveRecord::Base
+  # Constantes
+  QTT_PER_PAGE = 6
+  
   #Callbacks
   before_save :md_to_html
 
@@ -11,9 +14,10 @@ class Ad < ActiveRecord::Base
   validates :price, numericality: { greater_than: 0 }
 
   # Scope
-  scope :descending_order, ->(quantity = 10) { limit(quantity).order(created_at: :desc) } # Pega cinco anúnicos ordenados de forma descendente conforme a data de criação
+  scope :descending_order, ->(page) { order(created_at: :desc).page(page).per(QTT_PER_PAGE) } # Pega cinco anúnicos ordenados de forma descendente conforme a data de criação
   scope :to_member, ->(member) { where(member: member) } # Pega os anúncios de um membro
   scope :by_category, ->(id) { where(category: id) } # Pega os anúncios de um membro
+  scope :search, ->(term, page) { where("lower(title) LIKE ?", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE) } # Procura os anúncio com o título passado como parâmetro
 
   # Configuração da gem 'paperclip'
   has_attached_file :picture, styles: { large: "900,450#", medium: "254x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
@@ -23,6 +27,7 @@ class Ad < ActiveRecord::Base
   monetize :price_cents
 
   private
+    # Método para transformar Markdown em HTML
     def md_to_html
       options = {
         filter_html: true,
