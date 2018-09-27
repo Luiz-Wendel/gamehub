@@ -2,3 +2,20 @@
  *= require font-awesome
  *= require bootstrap_sb_admin_base_v2
  */
+
+/* Classe para controlar o tamanho da tag <object> */
+.embed-container {
+   height: 0;
+   width: 100%;
+   padding-bottom: 72.25%; /* Controlar height/width */
+   overflow: hidden;
+   position: relative;
+}
+
+.embed-container object {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+}

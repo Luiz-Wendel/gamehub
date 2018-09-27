@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :send_mail, only: [:edit, :create]
     resources :categories, except: [:show] # Cria algumas rotas para acessar as categorias (criar, editar, etc.)
     resources :admins, except: [:show]
+    resources :diagrams, only: [:index]
+
     get 'dashboard', to: 'dashboard#index'
   end
 
