@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  # Armazena a página que foi acessada antes de carregar cada página para redirecionar corretamente após login
+  before_filter :store_current_location, :unless => :devise_controller? # Unless evita armazenar a tela de login
 
   # Pundit
   include Pundit # Incluir o módulo Pundit
@@ -28,6 +30,12 @@ class ApplicationController < ActionController::Base
     def user_not_authorized
       flash[:alert] = "You are not authorized to perform this action."
       redirect_to(request.referrer || root_path)
+    end
+    
+  private
+  
+    def store_current_location
+      store_location_for(:member, request.url)
     end
 
 end

@@ -5,8 +5,8 @@
     <h3><%= @ad.title %></h3>
     <h4><%= humanized_money_with_symbol @ad.price %></h4>
     <p><%= @ad.description.html_safe %></p>
-    <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-    4.0 stars
+    <%= rating_for @ad, 'quality', disable_after_rate: false, cancel: true %>
+    <h6 class="text-muted"><%= @ad.rates('quality').count %> Aval.</h6>
   </div>
   <!-- /.card -->
 
@@ -27,7 +27,7 @@
     <hr>
     
     <h3>
-      Product Reviews
+      Mensagens do anúncio (<%= @ad.comments.count %>)
     </h3>
     
     <%= render partial: 'site/ad_detail/comments' %>

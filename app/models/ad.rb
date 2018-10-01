@@ -26,6 +26,9 @@ class Ad < ActiveRecord::Base
 
   # Configuração da gem 'money-rails'
   monetize :price_cents
+  
+  # Configuração da gem ratyrate
+  ratyrate_rateable 'quality' # Adiciona uma avaliação para os anúncios
 
   private
     # Método para transformar Markdown em HTML
