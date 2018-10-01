@@ -14,10 +14,12 @@ namespace :dev do
     puts %x(rake dev:generate_admins)
     puts %x(rake dev:generate_members)
     puts %x(rake dev:generate_ads)
+    puts %x(rake dev:generate_comments)
 
     puts "Gerando o ambiente de desenvolvimento...[OK]"
   end
 
+  # Task
   desc "Cria Administradores fakes"
   task generate_admins: :environment do
     puts "Cadastrando Administradores..."
@@ -34,6 +36,7 @@ namespace :dev do
     puts "Cadastrando Administradores...[OK]"
   end
 
+  # Task
   desc "Cria Membros fakes"
   task generate_members: :environment do
     puts "Cadastrando Membros..."
@@ -48,6 +51,7 @@ namespace :dev do
     puts "Cadastrando Membros...[OK]"
   end
 
+  # Task
   desc "Cria Anúncios fakes"
   task generate_ads: :environment do
     puts "Cadastrando Anúncios..."
@@ -85,6 +89,24 @@ namespace :dev do
 
   def markdown_fake
     %x(ruby -e "require 'doctor_ipsum'; puts DoctorIpsum::Markdown.entry")
+  end
+  
+  # Task
+  desc "Cria Comentários fakes"
+  task generate_comments: :environment do
+    puts "Cadastrando Comentários..."
+    
+    Ad.all.each do |ad|
+      (Random.rand(3)).times do
+        Comment.create!(
+          body: Faker::Lorem.paragraph([1,2,3].sample), # Gera um corpo com 1 a 3 parágrafos
+          member: Member.all.sample, # Sorteia um membro aleatório
+          ad: ad # Seleciona o anúncio atual
+        )
+      end
+    end
+    
+    puts "Cadastrando Comentários...[OK]"
   end
 
 end

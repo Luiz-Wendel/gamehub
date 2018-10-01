@@ -11,19 +11,29 @@
   <!-- /.card -->
 
   <div class="caption">
+    <% if member_signed_in? %>
+      <!-- Button trigger modal -->
+      <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#commentModal">
+        Deixar uma mensagem
+      </button>
+    <% else %>
+      <!-- Button trigger modal -->
+      <button class="btn btn-success btn-sm" disabled="disabled" data-toggle="modal" data-target="#commentModal">
+        Deixar uma mensagem
+      </button>
+      <h6 class="red-adv">*Para deixar uma mensagem é necessário estar logado</h6>
+    <% end %>
+    
+    <hr>
+    
     <h3>
       Product Reviews
     </h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-    <hr>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-    <hr>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-    <hr>
-    <a href="#" class="btn btn-success">Leave a Review</a>
+    
+    <%= render partial: 'site/ad_detail/comments' %>
+    
   </div>
   <!-- /.card -->
 </div>
+
+<%= render partial: 'site/ad_detail/comment_modal' %>

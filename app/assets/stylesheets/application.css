@@ -13,6 +13,11 @@
  *= require animate-css
  *= require_self
  */
+ 
+ .red-adv {
+   color:red;
+   font-weight: bold;
+ }
 
  /* Absolute Center Spinner */
 .loading {
