@@ -17,7 +17,7 @@ class Ad < ActiveRecord::Base
   # Scope
   scope :descending_order, ->(page) { order(created_at: :desc).page(page).per(QTT_PER_PAGE) } # Pega cinco anúnicos ordenados de forma descendente conforme a data de criação
   scope :to_member, ->(member) { where(member: member) } # Pega os anúncios de um membro
-  scope :by_category, ->(id) { where(category: id) } # Pega os anúncios de um membro
+  scope :by_category, ->(id, page) { where(category: id).page(page).per(QTT_PER_PAGE) } # Pega os anúncios de um membro
   scope :search, ->(term, page) { where("lower(title) LIKE ?", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE) } # Procura os anúncio com o título passado como parâmetro
 
   # Configuração da gem 'paperclip'
