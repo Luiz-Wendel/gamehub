@@ -1,6 +1,21 @@
 class Members::RegistrationsController < Devise::RegistrationsController
+  before_filter :configure_permitted_parameters
+  
+  def new
+    build_resource({})
+    resource.build_profile_member
+    respond_with self.resource
+  end
+  
   protected
-    def after_sign_up_path_for(resource)
-      site_profile_dashboard_index_path
+  
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(
+        :sign_up,
+        keys:[
+          :email, :password, :password_confirmation, 
+          :profile_member_attributes => [:name, :username]
+        ]
+      )
     end
 end
