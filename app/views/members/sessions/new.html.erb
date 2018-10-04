@@ -8,14 +8,6 @@
 
       <div style="padding-top:30px" class="panel-body" >
         
-        <% unless flash.blank? %>
-          <div id="signinalert" class="alert alert-danger">
-            <% flash.each do |name, msg| %>
-              <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-            <% end %>
-          </div>
-        <% end %>
-
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal", role: "form"}) do |f| %>
           <%= devise_error_messages! %>
 
@@ -57,3 +49,9 @@
   <!-- ./mainbox -->
 </div>
 <!-- ./container -->
+
+<% unless flash.blank? %>
+    <% flash.each do |name, msg| %>
+      <%= javascript_tag "$.notify( { message: '#{msg}'}, { type: 'danger', placement: { from: 'top', align: 'center' } } );" %>
+    <% end %>
+<% end %>

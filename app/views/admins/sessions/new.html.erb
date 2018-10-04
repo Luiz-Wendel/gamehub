@@ -8,8 +8,6 @@
 
       <div style="padding-top:30px" class="panel-body" >
 
-        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal", role: "form"}) do |f| %>
           <%= devise_error_messages! %>
 
@@ -43,7 +41,16 @@
         <% end %>
 
       </div>
+      <!-- ./panel-body -->
     </div>
+    <!-- ./panel panel-info -->
   </div>
+  <!-- ./mainbox -->
 </div>
+<!-- ./container -->
 
+<% unless flash.blank? %>
+  <% flash.each do |name, msg| %>
+      <%= javascript_tag "$.notify( { message: '#{msg}'}, { type: 'danger', placement: { from: 'top', align: 'center' } } );" %>
+    <% end %>
+<% end %>
