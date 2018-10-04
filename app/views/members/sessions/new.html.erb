@@ -2,13 +2,19 @@
   <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
     <div class="panel panel-info" >
       <div class="panel-heading">
-        <div class="panel-title">Sign In</div>
+        <div class="panel-title">Logar</div>
         <!--div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div-->
       </div>
 
       <div style="padding-top:30px" class="panel-body" >
-
-        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+        
+        <% unless flash.blank? %>
+          <div id="signinalert" class="alert alert-danger">
+            <% flash.each do |name, msg| %>
+              <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+            <% end %>
+          </div>
+        <% end %>
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal", role: "form"}) do |f| %>
           <%= devise_error_messages! %>
@@ -23,28 +29,20 @@
             <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "password" %>
           </div>
 
-          <div class="input-group">
-            <div class="checkbox">
-              <label>
-                <% if devise_mapping.rememberable? -%>
-                  <%= f.check_box :remember_me %>
-                  Lembrar-me
-                <% end %>
-              </label>
-            </div>
-          </div>
-
           <div style="margin-top:10px" class="form-group">
 
             <div class="col-sm-12 controls">
-              <%= f.submit "Log in", class: "btn btn-success" %>
+              <%= f.submit "Logar", class: "btn btn-success" %>
+              
+              <%= link_to "Cancelar", root_path, class: "btn btn-danger" %>
             </div>
+            
           </div>
 
           <div class="form-group">
             <div class="col-md-12 control">
               <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                Não tenho uma conta!
+                Não tem uma conta?
                 <%= link_to "Cadastrar-se", new_member_registration_path %>
               </div>
             </div>
@@ -52,6 +50,10 @@
         <% end %>
 
       </div>
+      <!-- ./panel-body -->
     </div>
+    <!-- ./panel panel-info -->
   </div>
+  <!-- ./mainbox -->
 </div>
+<!-- ./container -->

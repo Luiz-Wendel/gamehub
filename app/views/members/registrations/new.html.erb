@@ -48,12 +48,28 @@
 
             <div class="col-sm-12 controls">
               <%= f.submit "Cadastrar-se", class: "btn btn-success" %>
+            
+              <%= link_to "Cancelar", root_path, class: "btn btn-danger" %>
+            </div>
+            
+          </div>
+          <!-- ./form-group -->
+          
+          <div class="form-group">
+            <div class="col-md-12 control">
+              <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                Já tem uma conta?
+                <%= link_to "Login", new_member_session_path %>
+              </div>
             </div>
           </div>
         <% end %>
 
       </div>
+      <!-- ./panel-body -->
     </div>
+    <!-- ./panel panel-info -->
   </div>
+  <!-- ./mainbox -->
 </div>
-
+<!-- ./container -->

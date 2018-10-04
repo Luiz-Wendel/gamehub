@@ -18,9 +18,8 @@
       </button>
     <% else %>
       <!-- Button trigger modal -->
-      <button class="btn btn-success btn-sm" disabled="disabled" data-toggle="modal" data-target="#commentModal">
-        Deixar uma mensagem
-      </button>
+      <%= link_to "Deixar uma mensagem", new_member_session_path, class: "btn btn-success" %>
+      
       <h6 class="red-adv">*Para deixar uma mensagem é necessário estar logado</h6>
     <% end %>
     

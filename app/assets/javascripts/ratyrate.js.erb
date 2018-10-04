@@ -63,6 +63,5 @@ function initstars(){
   });
 };
 
-$(document).ready(initstars);
-$(document).on('page:change',initstars);
-$(document).on('ajaxComplete',initstars);
+$(initstars);
+$(document).bind('ajaxComplete',initstars);
