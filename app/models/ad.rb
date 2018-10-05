@@ -19,9 +19,10 @@ class Ad < ActiveRecord::Base
   scope :to_member, ->(member) { where(member: member) } # Pega os anúncios de um membro
   scope :by_category, ->(id, page) { where(category: id).page(page).per(QTT_PER_PAGE) } # Pega os anúncios de um membro
   scope :search, ->(term, page) { where("lower(title) LIKE ?", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE) } # Procura os anúncio com o título passado como parâmetro
+  scope :random, ->(quantity) {Ad.limit(quantity).order("RANDOM()") } # Seleciona anúncios randomicamente
 
   # Configuração da gem 'paperclip'
-  has_attached_file :picture, styles: { large: "900,450#", medium: "254x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :picture, styles: { large: "900x350#", medium: "254x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
   # Configuração da gem 'money-rails'
