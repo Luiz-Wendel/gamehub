@@ -51,8 +51,16 @@ puts "Cadastrando o Administrador Padrão...[OK]"
 
 puts "Cadastrando o Membro Padrão..."
 
-	Member.create!(email: "member@member.com",
+	member = Member.new(email: "member@member.com",
 								 password: "member321",
 								 password_confirmation: "member321")
+								 
+	member.build_profile_member # Gera o perfil em branco
+  
+  # Preenche os campos do perfil
+  member.profile_member.name = "Membro Padrão"
+  member.profile_member.username = "Membroso"
+  
+  member.save! # Slava o membro, a esclamação serve para mostrar o erro gerado pelo Active Record
 
 puts "Cadastrando o Membro Padrão...[OK]"

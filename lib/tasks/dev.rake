@@ -42,10 +42,18 @@ namespace :dev do
     puts "Cadastrando Membros..."
 
     100.times do
-      Member.create!(email: Faker::Internet.email, # Gera um email aleatório
+      member = Member.new(email: Faker::Internet.email, # Gera um email aleatório
                     password: "12345678",
                     password_confirmation: "12345678"
                     )
+                    
+      member.build_profile_member # Gera o perfil em branco
+      
+      # Preenche os campos do perfil
+      member.profile_member.name = Faker::Name.name_with_middle # Gera um nome completo aleatório
+      member.profile_member.username = Faker::Name.first_name # Gera um nome de usuário aleatório
+      
+      member.save! # Salva o membro, a esclamação serve para mostrar o erro gerado pelo Active Record
     end
 
     puts "Cadastrando Membros...[OK]"
