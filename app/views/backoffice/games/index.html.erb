@@ -1,0 +1,90 @@
+<h1 class="page-header">Jogos</h1>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Lista de Jogos
+    <%= link_to new_backoffice_game_path, class: "btn btn-success btn-circle pull-right", style: "margin-top: -5px" do %>
+      <i class="fa fa-plus"></i>
+    <% end %>
+  </div>
+  <!-- /.panel-heading -->
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table-app table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Plataforma</th>
+            <th class="th-ico">Detalhes</th>
+            <th class="th-ico">Editar</th>
+            <th class="th-ico">Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @games.each do |game| %>
+          <tr>
+            <td class="td-id"><%= game.id %></td>
+            <td><%= image_tag game.picture(:thumb) %></td>
+            <td><%= game.name %></td>
+            <td><%= game.platform.name %></td>
+            <td class="td-ico">
+              <%= link_to backoffice_game_detail_path(game.id), class: "btn btn-info btn-circle" do %>
+                <i class="fa fa-search"></i>
+              <% end %>
+            </td>
+            <td class="td-ico">
+              <%= link_to edit_backoffice_game_path(game.id), class: "btn btn-primary btn-circle" do %>
+                <i class="fa fa-edit"></i>
+              <% end %>
+            </td>
+            <td class="td-ico">
+              <%= link_to backoffice_game_path(game.id), method: :delete, class: "btn btn-danger btn-circle", data: {confirm: t('messages.confirm_with', item: game.name)} do %>
+                <i class="fa fa-times img-center"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <!-- /.table-responsive -->
+  </div>
+  <!-- /.panel-body -->
+</div>
+<!-- panel-default -->
+
+
+<!--h1> Jogos </h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Imagem</th>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Editar</th>
+      <th>Excluir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%# @ads.each do |ad| %>
+      <tr>
+        <td><%#= ad.id %></td>
+        <td><%#= image_tag ad.picture(:thumb) %></td>
+        <td><%#= ad.title %></td>
+        <td><%#= ad.category.description %></td>
+        <td class="td-ico">
+          <%#= link_to edit_site_profile_ad_path(ad.id), class: "btn btn-primary btn-sm circle-btn" do %>
+            <i class="fa fa-edit img-center"></i>
+          <%# end %>
+        </td>
+        <td class="td-ico">
+          
+        </td>
+      </tr>
+    <%# end %>
+  </tbody>
+</table-->

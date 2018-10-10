@@ -1,0 +1,2 @@
+module Backoffice::PlatformsHelper
+end

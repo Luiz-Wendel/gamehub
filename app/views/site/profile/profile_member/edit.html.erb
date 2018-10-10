@@ -38,7 +38,7 @@
     <div class="col-lg-2">
       <div class="form-group">
         <%= f.label :birthdate %>
-        <%= f.text_field :birthdate, class: "form-control datepicker", value: (l(@profile_member.birthdate) unless @profile_member.birthdate.blank?) %>
+        <%= f.text_field :birthdate, class: "form-control datepicker", value: (l(@profile_member.birthdate) unless @profile_member.birthdate.blank?), :autocomplete => :off %>
       </div>
     </div>
   </div>

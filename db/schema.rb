@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181002190317) do
+ActiveRecord::Schema.define(version: 20181009205823) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -67,6 +67,12 @@ ActiveRecord::Schema.define(version: 20181002190317) do
 
   add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true
 
+  create_table "classifications", force: :cascade do |t|
+    t.string   "rating_system", limit: 3
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.integer  "member_id"
@@ -91,6 +97,42 @@ ActiveRecord::Schema.define(version: 20181002190317) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "games", force: :cascade do |t|
+    t.string   "name",                 limit: 50
+    t.text     "description",          limit: 500
+    t.integer  "genre_id"
+    t.integer  "classification_id"
+    t.integer  "platform_id"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size",    limit: 8
+    t.datetime "picture_updated_at"
+  end
+
+  add_index "games", ["classification_id"], name: "index_games_on_classification_id"
+  add_index "games", ["genre_id"], name: "index_games_on_genre_id"
+  add_index "games", ["platform_id"], name: "index_games_on_platform_id"
+
+  create_table "genres", force: :cascade do |t|
+    t.string   "description", limit: 25
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "member_games", force: :cascade do |t|
+    t.integer  "quantity"
+    t.string   "quality"
+    t.integer  "game_id"
+    t.integer  "member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "member_games", ["game_id"], name: "index_member_games_on_game_id"
+  add_index "member_games", ["member_id"], name: "index_member_games_on_member_id"
+
   create_table "members", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -110,6 +152,12 @@ ActiveRecord::Schema.define(version: 20181002190317) do
     t.float    "overall_avg",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "platforms", force: :cascade do |t|
+    t.string   "name",       limit: 50
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "profile_members", force: :cascade do |t|

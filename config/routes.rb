@@ -8,6 +8,12 @@ Rails.application.routes.draw do
     resources :categories, except: [:show] # Cria algumas rotas para acessar as categorias (criar, editar, etc.)
     resources :admins, except: [:show]
     resources :diagrams, only: [:index]
+    resources :genres, except: [:show]
+    resources :platforms, except: [:show]
+    resources :classifications, except: [:show]
+    resources :games, except: [:show]
+    
+    get 'games/details/:id', to: 'games#detail', as: 'game_detail'
 
     get 'dashboard', to: 'dashboard#index'
   end
