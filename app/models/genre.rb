@@ -4,7 +4,7 @@ class Genre < ActiveRecord::Base
   #friendly_id :description, use: :slugged
 
   # Associations
-  has_many :games
+  has_and_belongs_to_many :games
   
   # Validations
   validates_presence_of :description

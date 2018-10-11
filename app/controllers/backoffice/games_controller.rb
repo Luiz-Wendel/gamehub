@@ -57,7 +57,7 @@ class Backoffice::GamesController < BackofficeController
     end
 
     def params_game
-      params.require(:game).permit(:picture, :name, :description, :classification_id, :genre_id, :platform_id)
+      params.require(:game).permit(:picture, :name, :description, :classification_id, :genre_ids => [], :platform_ids => [])
     end
 
     def set_game

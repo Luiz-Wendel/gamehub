@@ -4,5 +4,5 @@ class MemberGame < ActiveRecord::Base
   belongs_to :member
   
   # Validates
-  validates_presence_of :quantity, :quality, :game
+  validates_presence_of :game, :member
 end

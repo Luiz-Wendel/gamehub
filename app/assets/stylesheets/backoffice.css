@@ -19,3 +19,11 @@
    top: 0;
    left: 0;
 }
+
+td > .nowrap {
+   white-space: nowrap;
+}
+
+.page-header {
+   margin: 10px 0 10px;
+}

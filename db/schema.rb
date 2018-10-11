@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181009205823) do
+ActiveRecord::Schema.define(version: 20181011222537) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -114,6 +114,19 @@ ActiveRecord::Schema.define(version: 20181009205823) do
   add_index "games", ["classification_id"], name: "index_games_on_classification_id"
   add_index "games", ["genre_id"], name: "index_games_on_genre_id"
   add_index "games", ["platform_id"], name: "index_games_on_platform_id"
+
+  create_table "games_genres", id: false, force: :cascade do |t|
+    t.integer "genre_id", null: false
+    t.integer "game_id",  null: false
+  end
+
+  create_table "games_platforms", id: false, force: :cascade do |t|
+    t.integer "platform_id", null: false
+    t.integer "game_id",     null: false
+  end
+
+  add_index "games_platforms", ["game_id", "platform_id"], name: "index_games_platforms_on_game_id_and_platform_id"
+  add_index "games_platforms", ["platform_id", "game_id"], name: "index_games_platforms_on_platform_id_and_game_id"
 
   create_table "genres", force: :cascade do |t|
     t.string   "description", limit: 25

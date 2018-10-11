@@ -16,7 +16,7 @@
             <th>#</th>
             <th>Imagem</th>
             <th>Nome</th>
-            <th>Plataforma</th>
+            <th>Plataformas</th>
             <th class="th-ico">Detalhes</th>
             <th class="th-ico">Editar</th>
             <th class="th-ico">Excluir</th>
@@ -28,7 +28,11 @@
             <td class="td-id"><%= game.id %></td>
             <td><%= image_tag game.picture(:thumb) %></td>
             <td><%= game.name %></td>
-            <td><%= game.platform.name %></td>
+            <td>
+              <% game.platforms.each do |platform| %>
+                <p class="nowrap"><%= platform.name %></p>
+              <% end %>
+            </td>
             <td class="td-ico">
               <%= link_to backoffice_game_detail_path(game.id), class: "btn btn-info btn-circle" do %>
                 <i class="fa fa-search"></i>

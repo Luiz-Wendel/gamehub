@@ -1,8 +1,6 @@
 class CreateMemberGames < ActiveRecord::Migration
   def change
     create_table :member_games do |t|
-      t.integer :quantity
-      t.string :quality
       t.references :game, index: true, foreign_key: true
       t.references :member, index: true, foreign_key: true
 

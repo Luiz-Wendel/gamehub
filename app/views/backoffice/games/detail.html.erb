@@ -13,7 +13,7 @@
             <th>Imagem</th>
             <th>Nome</th>
             <th>Descrição</th>
-            <th>Plataforma</th>
+            <th>Plataformas</th>
             <th>Gênero</th>
             <th>Classificação</th>
           </tr>
@@ -23,8 +23,16 @@
             <td><%= image_tag @game.picture(:thumb) %></td>
             <td nowrap><%= @game.name %></td>
             <td><%= @game.description %></td>
-            <td><%= @game.platform.name %></td>
-            <td><%= @game.genre.description %></td>
+            <td>
+              <% @game.platforms.each do |platform| %>
+                <p class="nowrap"><%= platform.name %></p>
+              <% end %>
+            </td>
+            <td>
+              <% @game.genres.each do |genre| %>
+                <p class="nowrap"><%= genre.description %></p>
+              <% end %>
+            </td>
             <td><%= @game.classification.rating_system %></td>
           </tr>
         </tbody>
