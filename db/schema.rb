@@ -135,12 +135,12 @@ ActiveRecord::Schema.define(version: 20181011222537) do
   end
 
   create_table "member_games", force: :cascade do |t|
-    t.integer  "quantity"
-    t.string   "quality"
+    t.text     "quality",    limit: 200
+    t.string   "platform",   limit: 50
     t.integer  "game_id"
     t.integer  "member_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "member_games", ["game_id"], name: "index_member_games_on_game_id"
@@ -168,9 +168,9 @@ ActiveRecord::Schema.define(version: 20181011222537) do
   end
 
   create_table "platforms", force: :cascade do |t|
-    t.string   "name",       limit: 50
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.string   "name",       limit: 100
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "profile_members", force: :cascade do |t|

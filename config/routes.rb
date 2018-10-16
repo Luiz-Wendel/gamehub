@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       resources :dashboard, only: [:index]
       resources :ads, only: [:index, :edit, :update, :new, :create]
       resources :profile_member, only: [:edit, :update]
+      resources :member_games, except: [:show]
     end
 
     resources :ad_detail, only: [:show]

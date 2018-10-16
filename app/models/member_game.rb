@@ -4,5 +4,8 @@ class MemberGame < ActiveRecord::Base
   belongs_to :member
   
   # Validates
-  validates_presence_of :game, :member
+  validates_presence_of :game, :member, :quality, :platform
+  
+  #Scopes
+  scope :to_member, ->(member) { where(member: member) }
 end

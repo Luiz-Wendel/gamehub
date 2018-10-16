@@ -40,18 +40,18 @@
                 </div>
                 
                 <div class="row">
-                  <div class="col-lg-8">
+                  <div class="col-lg-5">
                     <div class="form-group">
-                      <%= f.label :genre %>
+                      <label>Gêneros</label>
                       <%= f.collection_select :genre_ids, Genre.all.order(:description), :id, :description, {}, { :multiple => true, class: "form-control" } %>
                     </div>
                   </div>
                 </div>
                 
                 <div class="row">
-                  <div class="col-lg-8">
+                  <div class="col-lg-5">
                     <div class="form-group">
-                      <%= f.label :platform %>
+                      <label>Plataformas</label>
                       <%= f.collection_select :platform_ids, Platform.all, :id, :name, {}, { :multiple => true, class: "form-control" } %>
                     </div>
                   </div>

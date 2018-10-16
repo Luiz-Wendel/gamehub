@@ -11,11 +11,13 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.precompile += %w( site/profile/ads.js
+                                                  site/profile/member_games.js.coffee
                                                   site/profile.js
                                                   site.js
                                                   backoffice.js )
 
 Rails.application.config.assets.precompile += %w( site/profile/ads.css
+                                                  site/profile/member_games.css
                                                   site/profile.css
                                                   site.css
                                                   backoffice.css )
