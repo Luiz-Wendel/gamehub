@@ -1,0 +1,29 @@
+<%= content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'site/profile/member_games', media: 'all' %>
+<% end %>
+
+<h1> Detalhes do jogo </h1>
+
+<table class="table-app table-hover table-responsive">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Imagem</th>
+      <th>Nome</th>
+      <th>Plataforma</th>
+      <th>Qualidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @member_game.id %></td>
+      <td><%= image_tag @member_game.game.picture(:thumb) %></td>
+      <td nowrap><%= @member_game.game.name %></td>
+      <td><%= @member_game.platform %></td>
+      <td><%= @member_game.quality %></td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+<%= link_to "Voltar", site_profile_member_games_path, class: "btn btn-danger" %>

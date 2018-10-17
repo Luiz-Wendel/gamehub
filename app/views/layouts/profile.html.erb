@@ -12,6 +12,8 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_link_tag 'site', media: 'all' %>
     <%= stylesheet_link_tag 'site/profile', media: 'all' %>
+    
+    <%= yield :stylesheets %>
 
     <%= csrf_meta_tags %>
 
@@ -41,6 +43,9 @@
           </li>
           <li>
             <%= link_to "Meus dados", edit_site_profile_profile_member_path(current_member.id) %>
+          </li>
+          <li>
+            <%= link_to "Adicionar jogo", new_site_profile_member_game_path %>
           </li>
           <li>
             <%= link_to "Meus jogos", site_profile_member_games_path %>

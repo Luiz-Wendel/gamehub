@@ -27,6 +27,8 @@ Rails.application.routes.draw do
       resources :ads, only: [:index, :edit, :update, :new, :create]
       resources :profile_member, only: [:edit, :update]
       resources :member_games, except: [:show]
+      
+      get 'member_games/details/:id', to: 'member_games#detail', as: 'member_game_detail'
     end
 
     resources :ad_detail, only: [:show]

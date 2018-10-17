@@ -1,3 +1,40 @@
 <h1>Editar jogo</h1>
 
-<%= render partial: 'site/profile/member_games/shared/form' %>
+<%= content_for :javascripts do %>
+  <%= javascript_include_tag 'site/profile/member_games' %>
+<% end %>
+
+<% if @member_game.errors.any? %>
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <ul>
+            <% @member_game.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
+<%= form_for([:site, :profile, @member_game]) do |f| %>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <label>Plataforma</label>
+        <%= f.collection_select :platform, @member_game.game.platforms, :name, :name, {}, { class: "form-control", id: "member_game_platforms" } %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <label>Qualidade</label>
+        <%= f.text_area :quality, { class: "form-control" } %>
+      </div>
+    </div>
+  </div>
+
+  <%= submit_tag "Salvar", class: "btn btn-success" %>
+  <%= link_to "Cancelar", site_profile_member_games_path, class: "btn btn-danger" %>
+<% end %>

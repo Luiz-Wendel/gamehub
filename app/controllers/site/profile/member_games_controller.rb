@@ -1,6 +1,6 @@
 class Site::Profile::MemberGamesController < Site::ProfileController
   # Before Actions
-  before_action :set_member_games, only: [:edit, :update, :destroy]
+  before_action :set_member_games, only: [:edit, :update, :destroy, :detail]
   before_action :save_game_name, only: [:destroy]
   
   # Variáveis
@@ -8,6 +8,7 @@ class Site::Profile::MemberGamesController < Site::ProfileController
 
   def index
     @member_games = MemberGame.to_member(current_member)
+    @temp = ""
   end
 
   def edit
@@ -44,6 +45,10 @@ class Site::Profile::MemberGamesController < Site::ProfileController
     else
       render :index
     end
+  end
+  
+  def detail
+    #
   end
 
   private
