@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   post '/rate' => 'rater#create', :as => 'rate'
   get 'backoffice', to: 'backoffice/dashboard#index'
 
@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       resources :ads, only: [:index, :edit, :update, :new, :create]
       resources :profile_member, only: [:edit, :update]
       resources :member_games, except: [:show]
+      resources :exchanges, except: [:show]
       
       get 'member_games/details/:id', to: 'member_games#detail', as: 'member_game_detail'
     end

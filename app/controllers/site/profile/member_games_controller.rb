@@ -8,7 +8,8 @@ class Site::Profile::MemberGamesController < Site::ProfileController
 
   def index
     @member_games = MemberGame.to_member(current_member)
-    @temp = ""
+    @last_platform = ""
+    @is_fisrt = 0
   end
 
   def edit

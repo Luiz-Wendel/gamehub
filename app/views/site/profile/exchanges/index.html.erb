@@ -1,0 +1,53 @@
+<%= content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'site/profile/exchanges' %>
+<% end %>
+
+<h1> Minhas trocas </h1>
+
+<table class="table-app table-hover table-responsive">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Meu jogo</th>
+      <th></th>
+      <th>Jogo requerido</th>
+      <th>Preço requerido</th>
+      <!--th>Detalhes</th-->
+      <th>Editar</th>
+      <th>Excluir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exchanges.each do |exchange| %>
+      <tr>
+        <td><%= exchange.id %></td>
+        <td><%= image_tag exchange.member_game.game.picture(:thumb) %></td>
+        <td>
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </td>
+        <td><%= image_tag exchange.game.picture(:thumb) %></td>
+        <% if exchange.price == 0 %>
+          <td>-</td>
+        <% else %>
+          <td><%= humanized_money_with_symbol exchange.price %></td>
+        <% end %>
+        <!--td class="td-ico">
+          <%#= link_to site_profile_exchange_detail_path(exchange.id), class: "btn btn-info btn-sm circle-btn" do %>
+            <i class="fa fa-search img-center"></i>
+          <%# end %>
+        </td-->
+        <td class="td-ico">
+          <%= link_to edit_site_profile_exchange_path(exchange.id), class: "btn btn-primary btn-sm circle-btn" do %>
+            <i class="fa fa-edit img-center"></i>
+          <% end %>
+        </td>
+        <td class="td-ico">
+          <%= link_to site_profile_exchange_path(exchange.id), method: :delete, class: "btn btn-danger btn-sm circle-btn", data: {confirm: t('messages.confirm')} do %>
+            <i class="fa fa-times img-center"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

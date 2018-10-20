@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181011222537) do
+ActiveRecord::Schema.define(version: 20181018224316) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -83,6 +83,19 @@ ActiveRecord::Schema.define(version: 20181011222537) do
 
   add_index "comments", ["ad_id"], name: "index_comments_on_ad_id"
   add_index "comments", ["member_id"], name: "index_comments_on_member_id"
+
+  create_table "exchanges", force: :cascade do |t|
+    t.integer  "price_cents",    default: 0
+    t.integer  "member_id"
+    t.integer  "member_game_id"
+    t.integer  "game_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "exchanges", ["game_id"], name: "index_exchanges_on_game_id"
+  add_index "exchanges", ["member_game_id"], name: "index_exchanges_on_member_game_id"
+  add_index "exchanges", ["member_id"], name: "index_exchanges_on_member_id"
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false

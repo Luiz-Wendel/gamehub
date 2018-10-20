@@ -35,12 +35,12 @@
           <li>
             <%= link_to "Dashboard", site_profile_dashboard_index_path %>
           </li>
-          <li>
-            <%= link_to "Meus anúncios", site_profile_ads_path %>
+          <!--li>
+            <%#= link_to "Meus anúncios", site_profile_ads_path %>
           </li>
           <li>
-            <%= link_to "Novo anúncio", new_site_profile_ad_path %>
-          </li>
+            <%#= link_to "Novo anúncio", new_site_profile_ad_path %>
+          </li-->
           <li>
             <%= link_to "Meus dados", edit_site_profile_profile_member_path(current_member.id) %>
           </li>
@@ -49,6 +49,12 @@
           </li>
           <li>
             <%= link_to "Meus jogos", site_profile_member_games_path %>
+          </li>
+          <li>
+            <%= link_to "Nova troca", new_site_profile_exchange_path %>
+          </li>
+          <li>
+            <%= link_to "Minhas trocas", site_profile_exchanges_path %>
           </li>
         </ul>
       </div>
@@ -68,7 +74,7 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'site' %>
     <%= javascript_include_tag 'site/profile' %>
-    <%#= javascript_include_tag 'site/profile/ads' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
 
     <%= yield :javascripts %>
 

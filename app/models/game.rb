@@ -4,7 +4,6 @@ class Game < ActiveRecord::Base
   belongs_to :classification
   has_and_belongs_to_many :platforms
   has_many :member_games
-  has_many :members, :through => :member_games
   
   # Validates
   validates_presence_of :name, :description, :genres, :classification, :platforms , :picture

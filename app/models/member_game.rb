@@ -8,4 +8,10 @@ class MemberGame < ActiveRecord::Base
   
   #Scopes
   scope :to_member, ->(member) { where(member: member).order(:platform).joins(:game).merge(Game.order(:name)) }
+  
+  def game_name_with_quality
+    str = self.game.name
+    str += ", Qualidade: " + self.quality.truncate(20)
+    str
+  end
 end
