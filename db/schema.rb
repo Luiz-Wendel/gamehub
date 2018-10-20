@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181018224316) do
+ActiveRecord::Schema.define(version: 20181020171802) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -221,5 +221,16 @@ ActiveRecord::Schema.define(version: 20181018224316) do
   end
 
   add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"
+
+  create_table "sales", force: :cascade do |t|
+    t.integer  "price_cents",    default: 0
+    t.integer  "member_id"
+    t.integer  "member_game_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "sales", ["member_game_id"], name: "index_sales_on_member_game_id"
+  add_index "sales", ["member_id"], name: "index_sales_on_member_id"
 
 end
