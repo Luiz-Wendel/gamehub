@@ -15,6 +15,7 @@ Rails.application.config.assets.precompile += %w( site/profile/sales.js
                                                   site/profile/ads.js
                                                   site/profile/member_games.js.coffee
                                                   site/profile.js
+                                                  site/home.js
                                                   site.js
                                                   backoffice.js )
 
@@ -23,5 +24,6 @@ Rails.application.config.assets.precompile += %w( site/profile/sales.css
                                                   site/profile/ads.css
                                                   site/profile/member_games.css
                                                   site/profile.css
+                                                  site/home.css
                                                   site.css
                                                   backoffice.css )

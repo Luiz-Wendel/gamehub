@@ -1,9 +1,10 @@
 <div id="home-sidebar" class="col-lg-2 center">
 
-  <h1 class="my-4">Categorias</h1>
+  <h3 class="my-4">Plataformas</h3>
   <div class="list-group center-list" style="margin-bottom: 10px;">
-    <% @categories.each do |category| %>
-      <%= link_to "#{category.description} (#{category.ads_count})", site_category_path(category.friendly_id), class: "list-group-item" %>
+    <% @platforms.each do |platform| %>
+      <%= link_to "#{platform.name} (#{@exchanges.quantity_by_platform(platform.name) + @sales.quantity_by_platform(platform.name)})", '#', class: "list-group-item" %>
+      <%#= link_to "#{category.description} (#{category.ads_count})", site_category_path(category.friendly_id), class: "list-group-item" %>
     <% end %>
   </div>
 

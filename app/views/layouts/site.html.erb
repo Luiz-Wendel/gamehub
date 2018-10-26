@@ -20,8 +20,8 @@
     <div id="global-spin" class="loading" style="display: none;">Loading&#8230;</div>
 
     <%= render partial: "layouts/site_shared/navigation" %> <!-- Renderiza a barra de navegação da página -->
-
-    <%= render partial: 'layouts/site_shared/sidebar' %>
+    
+     <%= render partial: "layouts/site_shared/sidebar" %>
 
     <div class="container">
 
@@ -30,10 +30,6 @@
         <div class="col-lg-1"></div>
 
         <div id="home-detail" class="col-lg-10 center">
-
-          <% if controller_path == 'site/home' %>
-            <%= render partial: 'layouts/site_shared/carousel' %>
-          <% end %>
 
           <div class="row" style="margin-left: 5px;">
 
@@ -58,6 +54,9 @@
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'site' %>
+    <% if controller_name == "home" %>
+      <%= javascript_include_tag 'site/home' %>
+    <% end %>
     
     <%= render partial: 'layouts/shared/notifications' %>
   </body>

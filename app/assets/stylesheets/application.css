@@ -175,3 +175,18 @@ th, td {
   vertical-align: middle;
   border-top: 1px solid #ddd;
 }
+
+/* Centralizar os itens da navbar */
+.navbar-centered .navbar-nav {
+    float: none;
+    text-align: center;
+}
+.navbar-centered .navbar-nav > li {
+    float: none;
+}
+.navbar-centered .nav > li {
+    display: inline;
+}
+.navbar-centered .nav > li > a {
+    display: inline-block;
+}
