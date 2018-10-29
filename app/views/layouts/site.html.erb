@@ -54,9 +54,6 @@
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'site' %>
-    <% if controller_name == "home" %>
-      <%= javascript_include_tag 'site/home' %>
-    <% end %>
     
     <%= render partial: 'layouts/shared/notifications' %>
   </body>

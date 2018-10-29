@@ -7,7 +7,7 @@
       <div class="input-group">
         <%= text_field_tag(:q, params[:q] , {class: "form-control", placeholder: "Pesquisar..."}) %>
         <span class="input-group-btn">
-          <%= submit_tag("Pesquisar", class: "btn btn-default") %>
+          <%= submit_tag("Pesquisar", class: "btn btn-default", id: "btn-pesquisar") %>
         </span>
       </div>
     <% end %>
@@ -27,14 +27,14 @@
           <%= link_to "#{current_member.email}", "#" %>
         </li>
         <li>
-          <%= link_to "Perfil", site_profile_dashboard_index_path %>
+          <%= link_to "Perfil", site_profile_dashboard_index_path, id: "perfil-link" %>
         </li>
         <li>
-          <%= link_to "Sair", destroy_member_session_path, method: :delete %>
+          <%= link_to "Sair", destroy_member_session_path, method: :delete, id: "sair-link" %>
         </li>
       <% end %>
       <li class="active">
-        <%= link_to "Home", root_path %>
+        <%= link_to "Home", root_path, id: "home-link" %>
       </li>
     </ul>
   </div>

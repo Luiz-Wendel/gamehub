@@ -9,9 +9,14 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
  */
 
- #home-detail {
-  margin-top: 50px;
- }
+.list-group-item.active {
+  background-color: #343a40 !important;
+  border-color: #343a40 !important;
+}
+
+#home-detail {
+margin-top: 50px;
+}
 
 .carousel {
   margin: 0 auto 20px auto;

@@ -1,0 +1,32 @@
+<!--git commit -m "Configurando para mostrar as trocas/vendas conforme a plataforma selecionada"-->
+
+<div class="well well-sm">
+    <h4><%= @platform_name %></h4>
+</div>
+
+<% unless @exchanges.blank? && @sales.blank? %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" id="home-tabs">
+        <li id="exchanges-menu" style="width: 50%; font-weight: bold;"><a href="#exchanges-tabs" data-toggle="tab">Trocas</a>
+        </li>
+        <li id="sales-menu" style="width: 50%; font-weight: bold;"><a href="#sales-tabs" data-toggle="tab">Vendas</a>
+        </li>
+      </ul>
+  
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="exchanges-tabs">
+          <%= render partial: 'site/home/exchanges' %>
+        </div>
+        <div class="tab-pane fade" id="sales-tabs">
+          <%= render partial: 'site/home/sales' %>
+        </div>
+      </div>
+    </div>
+    <!-- /.panel-body -->
+  </div>
+<% else %>
+  <h1 class="red-adv pull-right" style="line-height: 15em">Não foram encontrado registros para a pesquisa</h1>
+<% end %>

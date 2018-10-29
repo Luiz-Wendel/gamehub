@@ -2,9 +2,11 @@
 
   <h3 class="my-4">Plataformas</h3>
   <div class="list-group center-list" style="margin-bottom: 10px;">
+    <%= link_to "Todos (#{@exchanges_count + @sales_count})", root_path, { class: "list-group-item", id: "a_platform_0" } %>
+    <% i = 1 %>
     <% @platforms.each do |platform| %>
-      <%= link_to "#{platform.name} (#{@exchanges.quantity_by_platform(platform.name) + @sales.quantity_by_platform(platform.name)})", '#', class: "list-group-item" %>
-      <%#= link_to "#{category.description} (#{category.ads_count})", site_category_path(category.friendly_id), class: "list-group-item" %>
+      <%= link_to "#{platform.name} (#{@all_exchanges.quantity_by_platform(platform.name) + @all_sales.quantity_by_platform(platform.name)})", site_platform_path(platform.name), { class: "list-group-item", id: "a_platform_#{i}" } %>
+      <% i += 1 %>
     <% end %>
   </div>
 

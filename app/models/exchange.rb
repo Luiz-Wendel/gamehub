@@ -16,6 +16,7 @@ class Exchange < ActiveRecord::Base
   scope :descending_order, ->(page) { order(created_at: :desc).page(page).per(QTT_PER_PAGE) }
   # .quantity_by_platform: Dá um join na tabela 'member_game' e procura quantos jogos possuem a plataforma passada como parâmetro
   scope :quantity_by_platform, ->(platform) { joins(:member_game).where("member_games.platform = ?", platform).count() }
+  scope :where_platform, ->(platform, page) { joins(:member_game).where("member_games.platform = ?", platform).page(page).per(QTT_PER_PAGE) }
   
   # Configuração da gem 'money-rails'
   monetize :price_cents
