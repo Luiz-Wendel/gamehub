@@ -9,11 +9,19 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
  */
 
+/* Remover a troca das cores de fundo quando o mouse passa por cima ou clica no link */
+#email-link:hover, #email-link:visited, #email-link:link, #email-link:active {
+  background-color: #343a40 !important;
+  cursor: unset;
+}
+
+/* Troca a cor de fundo quando o link tem as classes 'list-group-item' e 'active' */
 .list-group-item.active {
   background-color: #343a40 !important;
   border-color: #343a40 !important;
 }
 
+/* Seta uma margem por causa da navbar */
 #home-detail {
 margin-top: 50px;
 }
@@ -47,6 +55,7 @@ body {
   padding-top: 50px;
 }
 
+/* Classe para tornar o botão circular */
 .circle-btn {
   border-radius: 50%;
 }

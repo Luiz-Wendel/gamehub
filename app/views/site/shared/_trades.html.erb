@@ -1,0 +1,48 @@
+<% unless controller_name == 'search' %>
+  <% size = '50%' %>
+<% else %>
+  <% size = '33.3%' %>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" id="home-tabs">
+      <% unless controller_name == 'search' %>
+        <li id="exchanges-menu" style="width: <%= size %>; font-weight: bold;">
+          <a href="#exchanges-tabs" data-toggle="tab">Trocas</a>
+        </li>
+      <% else %>
+        <li id="offerings-menu" style="width: <%= size %>; font-weight: bold;">
+          <a href="#offerings-tabs" data-toggle="tab">Oferecendo</a>
+        </li>
+        <li id="wantings-menu" style="width: <%= size %>; font-weight: bold;">
+          <a href="#wantings-tabs" data-toggle="tab">Querendo</a>
+        </li>
+      <% end %>
+      <li id="sales-menu" style="width: <%= size %>; font-weight: bold;">
+        <a href="#sales-tabs" data-toggle="tab">Vendas</a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <% unless controller_name == 'search' %>
+        <div class="tab-pane fade in active" id="exchanges-tabs">
+          <%= render partial: 'site/shared/exchanges' %>
+        </div>
+      <% else %>
+        <div class="tab-pane fade in active" id="offerings-tabs">
+          <%= render partial: 'site/shared/offerings' %>
+        </div>
+        <div class="tab-pane fade" id="wantings-tabs">
+          <%= render partial: 'site/shared/wantings' %>
+        </div>
+      <% end %>
+      <div class="tab-pane fade" id="sales-tabs">
+        <%= render partial: 'site/shared/sales' %>
+      </div>
+    </div>
+  </div>
+  <!-- /.panel-body -->
+</div>

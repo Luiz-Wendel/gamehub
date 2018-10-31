@@ -17,14 +17,15 @@
     <ul class="nav navbar-nav navbar-right">
       <% unless member_signed_in? %>
         <li>
-          <%= link_to "Login", new_member_session_path %>
+          <%= link_to "Login", new_member_session_path, id: "login-link" %>
         </li>
         <li>
-          <%= link_to "Cadastrar-se", new_member_registration_path %>
+          <%= link_to "Cadastrar-se", new_member_registration_path, id: "cadastro-link" %>
         </li>
       <% else %>
         <li>
-          <%= link_to "#{current_member.email}", "#" %>
+          <%# Foi usado um link_to para herdar a formatação, porém as funções de link foram retiradas via .js e .css %>
+          <%= link_to "#{current_member.email}", "#", :disabled => "disabled", id: "email-link" %>
         </li>
         <li>
           <%= link_to "Perfil", site_profile_dashboard_index_path, id: "perfil-link" %>

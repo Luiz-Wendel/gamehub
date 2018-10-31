@@ -14,8 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap.growl
 
-/* Loading Spin */
 $(document).ready(function(){
+  /* Loading Spin */
   $(document)
     .ajaxStart(function(){
       $('#global-spin').fadeIn('slow');
@@ -23,4 +23,9 @@ $(document).ready(function(){
     .ajaxStop(function(){
       $('#global-spin').fadeOut('slow');
     });
+    
+  /* Desativa o link_to que contenha (:disabled => "disabled") */
+  $('a[disabled=disabled]').click(function(event){
+    event.preventDefault(); // Prevent link from following its href
+  });
 });

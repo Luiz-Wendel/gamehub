@@ -6,10 +6,15 @@
       Setar a classe 'active' para a tag <a>
 *********************************************************/
 $(document).ready(function(){
-  if (sessionStorage.getItem("hasRunBefore") === null) { // Verifica se é a primeira vez na página
+  var url = window.location.pathname.split("/");
+  if (sessionStorage.getItem("hasRunBefore") === null && url[2] != 'search') { // Verifica se é a primeira vez na página
     sessionStorage.setItem('a_active', 0); // Se for, seta o item 'a_active' da sessions storage para '0'
     sessionStorage.setItem("hasRunBefore", true); // E o item 'hasRunBefore' para 'true'
   }
+  
+  /* Remove as opções ao clicar com o botão direito do mouse */
+  $('body').on('contextmenu', '#email-link', function(e){ return false; });
+  
   setAba();
   setActive();
 });
@@ -72,17 +77,44 @@ $(document).on('ready ajaxComplete', function(){
 */
 
 function setAba() {
+  var url = window.location.pathname.split("/");
+  if(url[2] == 'search' && sessionStorage.getItem('temp') == '#exchanges-tabs'){
+    sessionStorage.setItem('temp', '#offerings-tabs');
+  }else if((url[2] == null || url[2] == 'platforms') && (sessionStorage.getItem('temp') == '#offerings-tabs' || sessionStorage.getItem('temp') == '#wantings-tabs')){
+    sessionStorage.setItem('temp', '#exchanges-tabs');
+  }
+  
   if(sessionStorage.getItem('temp') == null){
-    $('#exchanges-menu').addClass("active");
+    if(url[2] == 'search'){
+      $('#offerings-menu').addClass("active");
+    }else{
+      $('#exchanges-menu').addClass("active");
+    }
   }else{
     if(sessionStorage.getItem('temp') == '#exchanges-tabs'){
       $('#exchanges-menu').addClass("active");
       $('#exchanges-tabs').addClass("active in");
       $('#sales-tabs').removeClass("active in");
+      $('#offerings-tabs').removeClass("active in");
+      $('#wantings-tabs').removeClass("active in");
     }else if(sessionStorage.getItem('temp') == '#sales-tabs'){
       $('#sales-menu').addClass("active");
       $('#sales-tabs').addClass("active in");
       $('#exchanges-tabs').removeClass("active in");
+      $('#offerings-tabs').removeClass("active in");
+      $('#wantings-tabs').removeClass("active in");
+    }else if(sessionStorage.getItem('temp') == '#offerings-tabs'){
+      $('#offerings-menu').addClass("active");
+      $('#offerings-tabs').addClass("active in");
+      $('#exchanges-tabs').removeClass("active in");
+      $('#sales-tabs').removeClass("active in");
+      $('#wantings-tabs').removeClass("active in");
+    }else if(sessionStorage.getItem('temp') == '#wantings-tabs'){
+      $('#wantings-menu').addClass("active");
+      $('#wantings-tabs').addClass("active in");
+      $('#exchanges-tabs').removeClass("active in");
+      $('#offerings-tabs').removeClass("active in");
+      $('#sales-tabs').removeClass("active in");
     }
   }
   
@@ -110,8 +142,12 @@ function setActive(){
     sessionStorage.setItem('a_active', e.target.id.substr(e.target.id.length - 2).replace('_', '')); // Seta o item 'a_active' da session storage como sendo o número do final id do elemento clicado
   });
   
-  $('.navbar-brand,#home-link,#sair-link,#perfil-link,#btn-pesquisar').on('click', function(){
+  $('.navbar-brand,#home-link,#sair-link,#perfil-link,#login-link,#cadastro-link,#btn-pesquisar').on('click', function(){
     sessionStorage.setItem('a_active', 0); // Seta o item 'a_active' da session storage para '0' quando clicar em algum dos elementos listados acima
+  });
+  
+  $('#btn-pesquisar').on('click', function(){
+    sessionStorage.removeItem('a_active'); // Remove o item 'a_active' da session storage
   });
 }
 /* ######################################################################################################################## */
