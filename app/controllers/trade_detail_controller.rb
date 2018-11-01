@@ -1,0 +1,2 @@
+class TradeDetailController < ApplicationController
+end

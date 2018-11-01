@@ -7,9 +7,6 @@ class Member < ActiveRecord::Base
   has_one :profile_member
   accepts_nested_attributes_for :profile_member
   
-  # Configuração da gem ratyrate
-  ratyrate_rater
-  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -1,0 +1,2 @@
+module TradeDetailHelper
+end

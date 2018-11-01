@@ -10,18 +10,18 @@
     <ul class="nav nav-tabs" id="home-tabs">
       <% unless controller_name == 'search' %>
         <li id="exchanges-menu" style="width: <%= size %>; font-weight: bold;">
-          <a href="#exchanges-tabs" data-toggle="tab">Trocas</a>
+          <a href="#exchanges-tabs" data-toggle="tab">Trocas (<%= @exchanges.count %>)</a>
         </li>
       <% else %>
         <li id="offerings-menu" style="width: <%= size %>; font-weight: bold;">
-          <a href="#offerings-tabs" data-toggle="tab">Oferecendo</a>
+          <a href="#offerings-tabs" data-toggle="tab">Oferecendo (<%= @offerings.count %>)</a>
         </li>
         <li id="wantings-menu" style="width: <%= size %>; font-weight: bold;">
-          <a href="#wantings-tabs" data-toggle="tab">Querendo</a>
+          <a href="#wantings-tabs" data-toggle="tab">Querendo (<%= @wantings.count %>)</a>
         </li>
       <% end %>
       <li id="sales-menu" style="width: <%= size %>; font-weight: bold;">
-        <a href="#sales-tabs" data-toggle="tab">Vendas</a>
+        <a href="#sales-tabs" data-toggle="tab">Vendas (<%= @sales.count %>)</a>
       </li>
     </ul>
 
