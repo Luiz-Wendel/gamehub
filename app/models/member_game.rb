@@ -2,6 +2,8 @@ class MemberGame < ActiveRecord::Base
   # Associations
   belongs_to :game
   belongs_to :member
+  has_many :sales, dependent: :destroy
+  has_many :exchanges, dependent: :destroy
   
   # Validates
   validates_presence_of :game, :member, :quality, :platform
