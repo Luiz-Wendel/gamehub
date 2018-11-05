@@ -114,50 +114,50 @@ puts "Cadastrando o Membro Padrão...[OK]"
 
 puts "Cadastrando os Jogos..."
 
-	game = Game.new([{:name => "Crysis",
+	Game.create!([{:name => "Crysis",
 											 :description => "Tanto em gráficos realistas, quanto em jogabilidade e efeitos físicos impressionantes, a inovação pode ser vista nas diversas demonstrações exibidas pelos desenvolvedores durante os últimos meses.
 			A história, apesar de não ser o ponto forte do jogo, não fica devendo em nada quando comparada com a de outros títulos similares, pois ela é simples: em 2020, arqueólogos americanos em uma ilha da Coreia do Norte acham algo interessante em suas escavações. Porém, o governo norte-coreano envia soldados imediatamente para o local e você, um soldado exemplar da Força Delta do exército dos Estados Unidos da América, é enviado para investigar o local.
 			Vale ressaltar alguns pontos interessantes, tais como: as armas são preparadas para serem modificadas de acordo com a necessidade do jogador, outras são capazes de destruir construções com apenas um disparo; a vestimenta utilizada pelo personagem, uma armadura com tecnologia de nano robôs, capaz de aumentar a força, velocidade, resistência de forma sobre-humana, e até tornar o personagem invisível; o ambiente de jogo é altamente destrutível, sendo possível danificar até mesmo a vegetação; e principalmente os inimigos, alienígenas terríveis e poderosos, e soldados treinados para suportar qualquer situação. Pode-se também conduzir veículos e disparar seus armamentos ao mesmo tempo, mesmo estando sozinho nos mesmos.",
-											 :genres => [Genre.find(6), Genre.find(16), Genre.find(20), Genre.find(21)],
-											 :classification => 5,
-											 :platforms => [Platform.find(3), Platform.find(17), Platforma.find(19)],
+											 :genres => [Genre.find(7), Genre.find(17), Genre.find(21), Genre.find(22)],
+											 :classification => Classification.find(6),
+											 :platforms => [Platform.find(4), Platform.find(18), Platform.find(20)],
 											 :picture => File.new(Rails.root.join('public', 'templates', 'images-for-games', "Crysis-box-art.jpg"), 'r')
 											},
 											{:name => "Crysis 2",
 											 :description => "Há 3 anos, militares vestidos com uma Nanosuit de última geração impediram o que parecia ser o início de uma invasão alienígena. Mas, recentemente, nos Estados Unidos, desastres naturais começaram a acontecer como pragas. E há poucos dias, um vírus de força destrutiva está corroendo as pessoas da ilha de Manhattan, em New York.
 			Os militares enviados para lá estão sendo incrivelmente violentos. E eles não estão sabendo lidar com o pior: a verdadeira invasão alienígena, que não vem somente do espaço, mas também de dentro do próprio planeta Terra. 
 			O único capaz de impedir tudo isso é Prophet, que sofre os efeitos do vírus e é obrigado a passar sua Nanosuit para um fuzileiro da marinha que se encontrava quase morto, após isso ele se mata para evitar a contaminação total de seu corpo pelo vírus. Armado com a última Nanosuit existente, Alcatraz irá enfrentar militares corruptos e alienígenas poderosíssimos para defender o que sobrou de New York.",
-											 :genres => [genre.find(6), Genre.find(16), Genre.find(20), Genre.find(21)],
-											 :classification => 5,
-											 :platforms => [platform.find(3), Platform.find(17), Platforma.find(19)],
+											 :genres => [Genre.find(7), Genre.find(17), Genre.find(21), Genre.find(22)],
+											 :classification => Classification.find(6),
+											 :platforms => [Platform.find(4), Platform.find(18), Platform.find(20)],
 											 :picture => File.new(Rails.root.join('public', 'templates', 'images-for-games', "Crysis_2_cover.png"), 'r')
 											},
 											{:name => "Crysis 3",
 											 :description => "Os jogadores irão assumir o papel de Laurence Barnes (chamado de Profeta, que 'tomou' o corpo de Alcatraz), que regressa a Nova Iorque para descobrir que a cidade foi enclausurada numa Nanodome criada pela corrupta Cell Corporation. A Liberty Dome de Nova Iorque é uma floresta tropical cheia de árvores, pântanos densos e rios de correntes fortes. Dentro da Liberty Dome, sete ambientes distintos e traiçoeiros são conhecidos como 'as Sete Maravilhas'. Neste mundo perigoso que exige armamento e tácticas avançadas, Prophet vai recorrer a um arco letal, sua armadura avançada e tecnologia alienígena devastadora para se tornar o caçador mais mortífero do planeta.",
-											 :genres => [genre.find(6), Genre.find(16), Genre.find(20), Genre.find(21)],
-											 :classification => 5,
-											 :platforms => [platform.find(3), Platform.find(17), Platforma.find(19)],
+											 :genres => [Genre.find(7), Genre.find(17), Genre.find(21), Genre.find(22)],
+											 :classification => Classification.find(6),
+											 :platforms => [Platform.find(4), Platform.find(18), Platform.find(20)],
 											 :picture => File.new(Rails.root.join('public', 'templates', 'images-for-games', "Crysis_3_logo.jpg"), 'r')
 											},
 											{:name => "Crash Bandicoot",
 											 :description => "Crash Bandicoot é uma série de jogos criada por Andy Gavin e Jason Rubin que são inclusive os fundadores da Naughty Dog. A série consiste basicamente nas aventuras do bandicoot geneticamente alterado Crash, que luta para impedir o planos do cientista do mal Neo Córtex e seus lacaios. A história do jogo se passa nas fictícias Ilhas Wumpa, um arquipélago situado na costa noroeste da Austrália, mas outros lugares são revelados.",
-											 :genres => [Genre.find(0), Genre.find(1), Genre.find(12)],
-											 :classification => 1,
-											 :platforms => [Platform.find(1), Platform.find(2), Platform.find(3), Platform.find(7), Platform.find(8), Platform.find(9), Platform.find(11), Platform.find(13), Platform.find(15), Platform.find(16), Platform.find(17), Platform.find(18), Platform.find(19)],
+											 :genres => [Genre.find(1), Genre.find(2), Genre.find(13)],
+											 :classification => Classification.find(2),
+											 :platforms => [Platform.find(2), Platform.find(3), Platform.find(4), Platform.find(8), Platform.find(9), Platform.find(10), Platform.find(12), Platform.find(14), Platform.find(16), Platform.find(17), Platform.find(18), Platform.find(19), Platform.find(20)],
 											 :picture => File.new(Rails.root.join('public', 'templates', 'images-for-games', "crash-bandicoot.jpg"), 'r')
 											},
 											{:name => "Mario Kart 8",
 											 :description => "Super Mario Kart é um jogo de corrida com personagens da série Mario.",
-											 :genres => [Genre.find(5), Genre.find(20), Genre.find(21)],
-											 :classification => 1,
-											 :platforms => [Platform.find(12), Platform.find(13)],
+											 :genres => [Genre.find(6), Genre.find(21), Genre.find(22)],
+											 :classification => Classification.find(2),
+											 :platforms => [Platform.find(13), Platform.find(14)],
 											 :picture => File.new(Rails.root.join('public', 'templates', 'images-for-games', "MarioKart8.jpg"), 'r')
 											},
 											{:name => "Rayman Legends",
 											 :description => "Rayman, Globox e os Teensies estão vagando por uma floresta encantada quando descobrem uma tenda misteriosa repleta com uma série de pinturas cativantes. Quando olham mais de perto, percebem que cada pintura conta a história de um mundo mítico. Enquanto se concentram em uma pintura que mostra uma terra medieval, de repente são sugados para dentro do mundo. Aí começa a aventura. O grupo deve correr, pular e lutar ao longo de cada um dos mundos para salvar a pátria e descobrir os segredos de todas as pinturas lendárias.",
-											 :genres => [Genre.find(0), Genre.find(1), Genre.find(12)],
-											 :classification => 1,
-											 :platforms => [Platform.find(2), Platform.find(3), Platform.find(11), Platform.find(12), Platform.find(13), Platform.find(17), Platform.find(18), Platform.find(19)],
+											 :genres => [Genre.find(1), Genre.find(2), Genre.find(13)],
+											 :classification => Classification.find(2),
+											 :platforms => [Platform.find(3), Platform.find(4), Platform.find(12), Platform.find(13), Platform.find(14), Platform.find(18), Platform.find(19), Platform.find(20)],
 											 :picture => File.new(Rails.root.join('public', 'templates', 'images-for-games', "rayman-legends.jpg"), 'r')
 											}
 										])

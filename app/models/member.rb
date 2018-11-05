@@ -1,6 +1,5 @@
 class Member < ActiveRecord::Base
   # Associations
-  has_many :ads
   has_many :member_games
   has_many :exchanges
   has_many :games, :through => :member_games
