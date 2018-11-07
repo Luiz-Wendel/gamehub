@@ -10,7 +10,7 @@
         <%= image_tag exchange.game.picture.url(:thumb) %>
         <div class="card-body">
           <h4 class="card-title">
-            <%= link_to "#{truncate(exchange.member_game.game.name, length: 12)} por #{truncate(exchange.game.name, length: 12)}", '#', remote: true, data: { push: :partial } %>
+            <%= link_to "#{truncate(exchange.member_game.game.name, length: 12)} por #{truncate(exchange.game.name, length: 12)}", site_exchange_detail_path(exchange.id), remote: true, data: { push: :partial } %>
             <%#= link_to truncate(exchange.title, length: 30), site_ad_detail_path(exchange), remote: true, data: { push: :partial } %>
           </h4>
           <% if exchange.price == 0 %>
@@ -18,7 +18,7 @@
           <% else %>
             <h5><%= humanized_money_with_symbol exchange.price %></h5>
           <% end %>
-          <p class="card-text"><%#= truncate(exchange.description_short, length: 100) %></p>
+          <p class="card-text"><%#= truncate(exchange.member_game.quality, length: 100) %></p>
         </div>
         <div class="card-footer readonly-star" style="padding-bottom: 5px;">
           <%#= rating_for exchange, "quality", disable_after_rate: true %>

@@ -1,0 +1,2 @@
+module Site::SaleDetailHelper
+end

@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
 
-  post '/rate' => 'rater#create', :as => 'rate'
   get 'backoffice', to: 'backoffice/dashboard#index'
 
   namespace :backoffice do
     resources :send_mail, only: [:edit, :create]
-    resources :categories, except: [:show] # Cria algumas rotas para acessar as categorias (criar, editar, etc.)
     resources :admins, except: [:show]
     resources :diagrams, only: [:index]
     resources :genres, except: [:show]
@@ -24,7 +22,6 @@ Rails.application.routes.draw do
 
     namespace :profile do
       resources :dashboard, only: [:index]
-      resources :ads, only: [:index, :edit, :update, :new, :create]
       resources :profile_member, only: [:edit, :update]
       resources :member_games, except: [:show]
       resources :exchanges, except: [:show]
@@ -33,8 +30,8 @@ Rails.application.routes.draw do
       get 'member_games/details/:id', to: 'member_games#detail', as: 'member_game_detail'
     end
 
-    resources :ad_detail, only: [:show]
-    resources :categories, only: [:show]
+    resources :exchange_detail, only: [:show]
+    resources :sale_detail, only: [:show]
     resources :comments, only: [:create]
     resources :platforms, only: [:show]
   end

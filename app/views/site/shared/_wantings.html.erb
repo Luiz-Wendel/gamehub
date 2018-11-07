@@ -1,34 +1,34 @@
 <% controle = @wantings %>
 
 <% unless controle.blank? %>
-  <% controle.each do |exchange| %>
+  <% controle.each do |wanting| %>
     <div class="col-lg-4 col-md-6 mb-4" style="margin-top: 20px;" id="teste">
       <div class="card h-100" style="margin-top: 10px;">
-        <%= image_tag exchange.member_game.game.picture.url(:thumb) %>
+        <%= image_tag wanting.member_game.game.picture.url(:thumb) %>
         <span class="glyphicon glyphicon-chevron-left"></span>
         <span class="glyphicon glyphicon-chevron-right"></span>
-        <%= image_tag exchange.game.picture.url(:thumb) %>
+        <%= image_tag wanting.game.picture.url(:thumb) %>
         <div class="card-body">
           <h4 class="card-title">
-            <%= link_to "#{truncate(exchange.member_game.game.name, length: 12)} por #{truncate(exchange.game.name, length: 12)}", '#', remote: true, data: { push: :partial } %>
-            <%#= link_to truncate(exchange.title, length: 30), site_ad_detail_path(exchange), remote: true, data: { push: :partial } %>
+            <%= link_to "#{truncate(wanting.member_game.game.name, length: 12)} por #{truncate(wanting.game.name, length: 12)}", site_exchange_detail_path(wanting.id), remote: true, data: { push: :partial } %>
+            <%#= link_to truncate(wanting.title, length: 30), site_ad_detail_path(wanting), remote: true, data: { push: :partial } %>
           </h4>
-          <% if exchange.price == 0 %>
+          <% if wanting.price == 0 %>
             <h5>-</h5>
           <% else %>
-            <h5><%= humanized_money_with_symbol exchange.price %></h5>
+            <h5><%= humanized_money_with_symbol wanting.price %></h5>
           <% end %>
-          <p class="card-text"><%#= truncate(exchange.description_short, length: 100) %></p>
+          <p class="card-text"><%#= truncate(wanting.member_game.quality, length: 100) %></p>
         </div>
         <div class="card-footer readonly-star" style="padding-bottom: 5px;">
-          <%#= rating_for exchange, "quality", disable_after_rate: true %>
+          <%#= rating_for wanting, "quality", disable_after_rate: true %>
         </div>
       </div>
     </div>
   <% end %>
 
   <div class="row col-lg-12">
-    <div class="text-center exchanges-pager">
+    <div class="text-center wantings-pager">
         <%= paginate controle, :param_name => "wantings_page" %>
     </div>
   </div>

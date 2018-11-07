@@ -19,7 +19,7 @@
       <div class="form-group">
         <%#= f.label :title %>
         <label>Meu jogo</label>
-        <%= f.collection_select :member_game_id, MemberGame.all.joins(:game).merge(Game.order(:name)), :id, :game_name_with_quality, { :prompt=> 'Selecione...' }, { class: "form-control" } %>
+        <%= f.collection_select :member_game_id, MemberGame.where(member: current_member).joins(:game).merge(Game.order(:name)), :id, :game_name_with_quality, { :prompt=> 'Selecione...' }, { class: "form-control" } %>
       </div>
     </div>
   </div>

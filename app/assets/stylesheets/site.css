@@ -40,7 +40,7 @@ margin-top: 50px;
   margin: 0 auto;
 }
 
-.footer-dark, .navbar-dark, .navbar-dark > a, .navbar-dark > div > ul > li > a {
+.footer-dark, .navbar-dark, .navbar-dark > div > a, .navbar-dark > ul > li > a {
     background-color: #343A40;
     color:  #999;
 }
@@ -58,4 +58,14 @@ body {
 /* Classe para tornar o botão circular */
 .circle-btn {
   border-radius: 50%;
+}
+
+.navbar-right > li {
+  float: left;
+  height: auto;
+}
+
+/* Retirar as bordas das tabelas */
+td, th {
+  border: none !important;
 }

@@ -11,9 +11,10 @@
     </tr>
   </thead>
   <tbody>
+    <% i = 1 %>
     <% @sales.each do |sale| %>
       <tr>
-        <td><%= sale.id %></td>
+        <td><%= i %></td>
         <td><%= image_tag sale.member_game.game.picture(:thumb) %></td>
         <td><%= humanized_money_with_symbol sale.price %></td>
         <td class="td-ico">
@@ -27,6 +28,7 @@
           <% end %>
         </td>
       </tr>
+      <% i += 1 %>
     <% end %>
   </tbody>
 </table>

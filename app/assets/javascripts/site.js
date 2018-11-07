@@ -1,8 +1,6 @@
 //= require bootstrap
 //= require wiselinks
-/*********************************************************
-      Setar a classe 'active' para a tag <a>
-*********************************************************/
+
 $(document).ready(function(){
   var url = window.location.pathname.split("/");
   if (sessionStorage.getItem("hasRunBefore") === null && url[2] != 'search') { // Verifica se é a primeira vez na página
@@ -15,11 +13,13 @@ $(document).ready(function(){
   
   setAba();
   setActive();
+  configTable();
 });
 
 $(document).ajaxComplete(function(){
   setAba();
   setActive();
+  configTable();
 });
 
 /* Wiselinks Gem */
@@ -147,5 +147,15 @@ function setActive(){
   $('#btn-pesquisar').on('click', function(){
     sessionStorage.removeItem('a_active'); // Remove o item 'a_active' da session storage
   });
+}
+/* ######################################################################################################################## */
+
+/* Função para colocar a classe 'pull-right' e 'pull-left' para as tags <th> e <td> */
+function configTable(){
+  var url = window.location.pathname.split("/");
+  if(url[2] == 'exchange_detail' || url[2] == 'sale_detail'){
+    $('th').attr('style','width: 442.5px;text-align: right !important;');
+    $('td').attr('style','width: 442.5px;text-align: left !important;');
+  }
 }
 /* ######################################################################################################################## */

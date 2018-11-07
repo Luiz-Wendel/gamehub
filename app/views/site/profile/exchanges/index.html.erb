@@ -18,9 +18,10 @@
     </tr>
   </thead>
   <tbody>
+    <% i = 1 %>
     <% @exchanges.each do |exchange| %>
       <tr>
-        <td><%= exchange.id %></td>
+        <td><%= i %></td>
         <td><%= image_tag exchange.member_game.game.picture(:thumb) %></td>
         <td>
           <span class="glyphicon glyphicon-chevron-left"></span>
@@ -48,6 +49,7 @@
           <% end %>
         </td>
       </tr>
+      <% i += 1 %>
     <% end %>
   </tbody>
 </table>

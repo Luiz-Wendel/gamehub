@@ -1,7 +1,0 @@
-<% @ad.comments.each do |comment| %>
-  <p> <%= comment.body %> </p>
-  
-  <small class="text-muted">Postado por <strong><%= comment.member.email %></strong> em <strong><%= time_tag(comment.created_at) %></strong></small>
-  
-  <hr>
-<% end %>
