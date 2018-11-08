@@ -1,3 +1,7 @@
+<div class="well well-sm">
+    <h4>Detalhes</h4>
+</div>
+
 <div class="thumbnail">
   <div class="caption">
     <%= image_tag @sale.member_game.game.picture.url(:medium), class: "card-img-top img-fluid" %>
@@ -52,13 +56,13 @@
     <hr>
     
     <h3>
-      Mensagens do anúncio (<%#= @sale.comments.count %>)
+      Mensagens do anúncio (<%= @sale.comments.count %>)
     </h3>
     
-    <%#= render partial: 'site/ad_detail/comments' %>
+    <%= render partial: 'site/sale_detail/comments' %>
     
   </div>
   <!-- /.card -->
 </div>
 
-<%#= render partial: 'site/ad_detail/comment_modal' %>
+<%= render partial: 'site/sale_detail/comment_modal' %>

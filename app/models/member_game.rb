@@ -13,6 +13,7 @@ class MemberGame < ActiveRecord::Base
   
   def game_name_with_quality
     str = self.game.name
+    str += ", " + self.platform
     str += ", Qualidade: " + self.quality.truncate(20)
     str
   end

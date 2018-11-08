@@ -1,5 +1,5 @@
 <div class="well well-sm">
-    <h4>Resultados da pesquisa</h4>
+    <h4><b>Resultados da pesquisa (<%= "#{@all_offerings.count + @all_wantings.count + @all_sales.count}" %>)</b></h4>
 </div>
 
 <%= render partial: 'site/shared/trades' %>

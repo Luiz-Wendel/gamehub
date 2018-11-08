@@ -8,5 +8,7 @@ class Site::PlatformsController < SiteController
     @all_sales = Sale.all
     @exchanges_count = Exchange.count
     @sales_count = Sale.count
+    @exchanges_platform_count = Exchange.quantity_by_platform(params[:id])
+    @sales_platform_count = Sale.quantity_by_platform(params[:id])
   end
 end

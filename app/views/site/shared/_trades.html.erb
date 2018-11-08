@@ -10,18 +10,26 @@
     <ul class="nav nav-tabs" id="home-tabs">
       <% unless controller_name == 'search' %>
         <li id="exchanges-menu" style="width: <%= size %>; font-weight: bold;">
-          <a href="#exchanges-tabs" data-toggle="tab">Trocas (<%= @exchanges.count %>)</a>
+          <% unless controller_name == 'platforms' %>
+            <a href="#exchanges-tabs" data-toggle="tab">Trocas (<%= @all_exchanges.count %>)</a>
+          <% else %>
+            <a href="#exchanges-tabs" data-toggle="tab">Trocas (<%= @exchanges_platform_count %>)</a>
+          <% end %>
         </li>
       <% else %>
         <li id="offerings-menu" style="width: <%= size %>; font-weight: bold;">
-          <a href="#offerings-tabs" data-toggle="tab">Oferecendo (<%= @offerings.count %>)</a>
+          <a href="#offerings-tabs" data-toggle="tab">Oferecendo (<%= @all_offerings.count %>)</a>
         </li>
         <li id="wantings-menu" style="width: <%= size %>; font-weight: bold;">
-          <a href="#wantings-tabs" data-toggle="tab">Querendo (<%= @wantings.count %>)</a>
+          <a href="#wantings-tabs" data-toggle="tab">Querendo (<%= @all_wantings.count %>)</a>
         </li>
       <% end %>
       <li id="sales-menu" style="width: <%= size %>; font-weight: bold;">
-        <a href="#sales-tabs" data-toggle="tab">Vendas (<%= @sales.count %>)</a>
+        <% unless controller_name == 'platforms' %>
+          <a href="#sales-tabs" data-toggle="tab">Vendas (<%= @all_sales.count %>)</a>
+        <% else %>
+          <a href="#sales-tabs" data-toggle="tab">Vendas (<%= @sales_platform_count %>)</a>
+        <% end %>
       </li>
     </ul>
 

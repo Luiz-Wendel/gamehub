@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181020171802) do
+ActiveRecord::Schema.define(version: 20181107213737) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -33,6 +33,19 @@ ActiveRecord::Schema.define(version: 20181020171802) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "member_id"
+    t.integer  "exchange_id"
+    t.integer  "sale_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "comments", ["exchange_id"], name: "index_comments_on_exchange_id"
+  add_index "comments", ["member_id"], name: "index_comments_on_member_id"
+  add_index "comments", ["sale_id"], name: "index_comments_on_sale_id"
 
   create_table "exchanges", force: :cascade do |t|
     t.integer  "price_cents",    default: 0
