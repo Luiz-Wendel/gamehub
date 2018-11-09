@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating. http://ratingmoviestore.herokuapp.com
@@ -36,6 +37,8 @@ gem 'devise-i18n'
 gem 'rails-i18n'
 # Manage Procfile-based applications http://ddollar.github.com/foreman
 gem 'foreman'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -91,8 +94,6 @@ group :development, :test do
   gem 'rails-erd'
   # A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker'
-  # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 end
 
 group :development do
@@ -103,10 +104,4 @@ group :development do
   gem 'spring'
 end
 
-group :production do
-  # Use Postgree as the database (HEROKU)
-  gem 'pg'
 
-  # Heroku
-  gem 'rails_12factor'
-end
