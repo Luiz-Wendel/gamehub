@@ -19,7 +19,7 @@
           <div class="col-lg-8">
               <%= form_for([:backoffice, @platform]) do |f| %>
                 <div class="form-group">
-                  <label>Nome</label>
+                  <%= f.label :name %>
                   <%= f.text_field :name, class: "form-control", placeholder: "Exemplo: Play Station 4", :autocomplete => :off %>
                 </div>
                 <button type="submit" class="btn btn-success">Salvar</button>

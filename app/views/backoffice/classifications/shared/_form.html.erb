@@ -19,7 +19,7 @@
           <div class="col-lg-8">
               <%= form_for([:backoffice, @classification]) do |f| %>
                 <div class="form-group">
-                  <label>Classificação</label>
+                  <%= f.label :rating_system %>
                   <%= f.text_field :rating_system, class: "form-control", placeholder: "Exemplo: 18+", :autocomplete => :off %>
                 </div>
                 <button type="submit" class="btn btn-success">Salvar</button>

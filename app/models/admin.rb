@@ -10,5 +10,8 @@ class Admin < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
+  # Validations
+  validates_presence_of :role, :name
 
 end

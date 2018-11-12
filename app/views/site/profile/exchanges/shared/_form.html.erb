@@ -17,8 +17,9 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="form-group">
-        <%#= f.label :title %>
-        <label>Meu jogo</label>
+        <%= f.label :member_game do %>
+          Meu jogo<span class="red-adv">*</span>
+        <% end %>
         <%= f.collection_select :member_game_id, MemberGame.where(member: current_member).joins(:game).merge(Game.order(:name)), :id, :game_name_with_quality, { :prompt=> 'Selecione...' }, { class: "form-control" } %>
       </div>
     </div>
@@ -27,14 +28,16 @@
   <div class="row">
     <div class="col-lg-3">
       <div class="form-group">
-        <label>Jogo requerido</label>
+        <%= f.label :game do %>
+          Jogo requerido<span class="red-adv">*</span>
+        <% end %>
         <%= f.collection_select :game_id, Game.order(:name), :id, :name, { :prompt=> 'Selecione...' }, { class: "form-control" } %>
       </div>
     </div>
     
     <div class="col-lg-2">
       <div class="form-group">
-        <label>Preço requerido</label>
+        <%= f.label :price, 'Preço requerido' %>
         <div class="input-group">
           <span class="input-group-addon"><%= @exchange.price.currency.symbol %></span>
           <%= f.text_field :price, class: "form-control" %>

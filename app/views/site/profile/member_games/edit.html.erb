@@ -20,7 +20,7 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="form-group">
-        <label>Plataforma</label>
+        <%= f.label :platform %>
         <%= f.collection_select :platform, @member_game.game.platforms, :name, :name, {}, { class: "form-control", id: "member_game_platforms" } %>
       </div>
     </div>
@@ -29,7 +29,7 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="form-group">
-        <label>Qualidade</label>
+        <%= f.label :quality %>
         <%= f.text_area :quality, { class: "form-control" } %>
       </div>
     </div>

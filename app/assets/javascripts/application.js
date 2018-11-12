@@ -28,4 +28,6 @@ $(document).ready(function(){
   $('a[disabled=disabled]').click(function(event){
     event.preventDefault(); // Prevent link from following its href
   });
+  
+  $('.field_with_errors label').append('<span class="red-adv">*</span>');
 });

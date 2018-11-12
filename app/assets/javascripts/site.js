@@ -6,6 +6,9 @@ $(document).ready(function(){
   if (sessionStorage.getItem("hasRunBefore") === null && url[2] != 'search') { // Verifica se é a primeira vez na página
     sessionStorage.setItem('a_active', 0); // Se for, seta o item 'a_active' da sessions storage para '0'
     sessionStorage.setItem("hasRunBefore", true); // E o item 'hasRunBefore' para 'true'
+  } else if(url[2] == 'home'){
+    sessionStorage.setItem('a_active', 0);
+    sessionStorage.setItem('temp', '#exchanges-tabs');
   }
   
   /* Remove as opções ao clicar com o botão direito do mouse */

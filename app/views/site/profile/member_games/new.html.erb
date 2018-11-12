@@ -19,8 +19,7 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="form-group">
-        <%#= f.label :title %>
-        <label>Jogo</label>
+        <%= f.label :game %>
         <%= f.collection_select :game_id, Game.all.order(:name), :id, :name , { :prompt=> 'Selecione...' }, { class: "form-control" } %>
       </div>
     </div>
@@ -29,7 +28,7 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="form-group">
-        <label>Plataforma</label>
+        <%= f.label :platform %>
         <%= f.grouped_collection_select :platform, Game.order(:name), :platforms, :name, :name, :name, { :prompt=> 'Selecione...' }, { class: "form-control" } %>
       </div>
     </div>
@@ -38,7 +37,7 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="form-group">
-        <label>Qualidade</label>
+        <%= f.label :quality %>
         <%= f.text_area :quality, { class: "form-control" } %>
       </div>
     </div>

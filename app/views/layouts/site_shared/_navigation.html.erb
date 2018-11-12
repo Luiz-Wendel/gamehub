@@ -12,7 +12,7 @@
   </div>
   
   <% unless request.path.include?('/site/profile/') %>
-    <%= form_tag site_search_path, method: :get, class: "navbar-form navbar-left", role: "search" do %>
+    <%= form_tag site_search_path, method: :get, class: "navbar-form navbar-left", style: "margin-left: 400px;", role: "search" do %>
       <div class="input-group">
         <%= text_field_tag(:q, params[:q] , {class: "form-control", placeholder: "Pesquisar..."}) %>
         <span class="input-group-btn">
