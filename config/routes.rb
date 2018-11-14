@@ -26,8 +26,11 @@ Rails.application.routes.draw do
       resources :member_games, except: [:show]
       resources :exchanges, except: [:show]
       resources :sales, except: [:show]
+      resources :offers, only: [:create]
       
       get 'member_games/details/:id', to: 'member_games#detail', as: 'member_game_detail'
+      get 'offers/recieved/', to: 'offers#recieved', as: 'offers_recieved'
+      get 'offers/performed/', to: 'offers#performed', as: 'offers_performed'
     end
 
     resources :exchange_detail, only: [:show]

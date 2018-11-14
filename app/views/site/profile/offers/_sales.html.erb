@@ -1,0 +1,20 @@
+<table class="table-app table-hover table-responsive" style="width: 100%;">
+  <thead>
+    <tr>
+      <th>Jogo</th>
+      <th>Preço</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sale_offers.each do |offer| %>
+      <tr>
+        <td><%= image_tag offer.sale.member_game.game.picture(:thumb) %></td>
+        <% if offer.sale.price == 0 %>
+          <td>-</td>
+        <% else %>
+          <td><%= humanized_money_with_symbol offer.sale.price %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

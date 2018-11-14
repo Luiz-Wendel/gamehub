@@ -9,11 +9,11 @@ class Site::CommentsController < SiteController
     if @comment.save
       if(@comment.exchange.present?)
         redirect_to site_exchange_detail_path(@comment.exchange.id),
-        notice: "comentário adicionado com sucesso!"
+        notice: "Comentário adicionado com sucesso!"
       else
         if(@comment.sale.present?)
           redirect_to site_sale_detail_path(@comment.sale.id),
-          notice: "comentário adicionado com sucesso!"
+          notice: "Comentário adicionado com sucesso!"
         end
       end
     else

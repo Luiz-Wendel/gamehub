@@ -4,11 +4,12 @@
 
 <h1> Meus jogos </h1>
 
+<% i = 1 %>
 <% @member_games.each do |member_game| %>
-  <% @is_first = 0 %>
+  <% is_first = 0 %>
 
   <% unless @last_platform == member_game.platform %>
-    <% @is_first = 1 %>
+    <% is_first = 1 %>
     <table class="table-app table-hover table-responsive">
       <h4><%= member_game.platform %></h4>
       <thead>
@@ -25,7 +26,7 @@
       <tbody>
     <% end %>
       <tr>
-        <td><%= member_game.id %></td>
+        <td><%= i %></td>
         <td><%= image_tag member_game.game.picture(:thumb) %></td>
         <td nowrap><%= member_game.game.name %></td>
         <td><%= member_game.quality.truncate(50) %></td>
@@ -45,7 +46,7 @@
           <% end %>
         </td>
       </tr>
-    <% unless @last_platform == member_game.platform || member_game == @member_games.first || @is_first == 1  %>
+    <% unless @last_platform == member_game.platform || member_game == @member_games.first || is_first == 1  %>
         </tbody>
       </table>
     <% end %>
@@ -55,4 +56,5 @@
     <% end %>
   
   <% @last_platform = member_game.platform %>
+  <% i += 1 %>
 <% end %>

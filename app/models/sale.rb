@@ -5,7 +5,8 @@ class Sale < ActiveRecord::Base
   # Associations
   belongs_to :member
   belongs_to :member_game
-  has_many :comments
+  has_many :comments, dependent: :destroy
+  has_many :offers, dependent: :destroy
   
   # Validates
   validates_presence_of :member_game

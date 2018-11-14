@@ -1,0 +1,27 @@
+<table class="table-app table-hover table-responsive" style="width: 100%;">
+  <thead>
+    <tr>
+      <th>Meu jogo</th>
+      <th></th>
+      <th>Jogo requerido</th>
+      <th>Preço requerido</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exchange_offers.each do |offer| %>
+      <tr>
+        <td><%= image_tag offer.exchange.member_game.game.picture(:thumb) %></td>
+        <td>
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </td>
+        <td><%= image_tag offer.exchange.game.picture(:thumb) %></td>
+        <% if offer.exchange.price == 0 %>
+          <td>-</td>
+        <% else %>
+          <td><%= humanized_money_with_symbol offer.exchange.price %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -6,7 +6,8 @@ class Exchange < ActiveRecord::Base
   belongs_to :member
   belongs_to :member_game
   belongs_to :game
-  has_many :comments
+  has_many :comments, dependent: :destroy
+  has_many :offers, dependent: :destroy
   
   # Validates
   validates_presence_of :game_id, :member_game_id

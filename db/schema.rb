@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181107213737) do
+ActiveRecord::Schema.define(version: 20181112185535) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -121,6 +121,19 @@ ActiveRecord::Schema.define(version: 20181107213737) do
 
   add_index "members", ["email"], name: "index_members_on_email", unique: true
   add_index "members", ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
+
+  create_table "offers", force: :cascade do |t|
+    t.integer  "status"
+    t.integer  "member_id"
+    t.integer  "exchange_id"
+    t.integer  "sale_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "offers", ["exchange_id"], name: "index_offers_on_exchange_id"
+  add_index "offers", ["member_id"], name: "index_offers_on_member_id"
+  add_index "offers", ["sale_id"], name: "index_offers_on_sale_id"
 
   create_table "platforms", force: :cascade do |t|
     t.string   "name",       limit: 100
