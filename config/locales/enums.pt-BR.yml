@@ -4,3 +4,8 @@
       role:
         full: Total
         restricted: Restrito
+    offer:
+      status:
+        waiting_response: Aguardando resposta
+        accepted: Aceita
+        refused: Recusada

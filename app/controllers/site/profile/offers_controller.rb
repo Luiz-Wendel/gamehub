@@ -2,6 +2,9 @@ class Site::Profile::OffersController < Site::ProfileController
   # Autenticação
   before_action :authenticate_member!
   
+  # Before Actions
+  before_action :set_offers, only: [:destroy]
+  
   def recieved
     @exchange_offers = Offer.recieved_exchanges(current_member).active
     @sale_offers = Offer.recieved_sales(current_member).active
@@ -39,9 +42,23 @@ class Site::Profile::OffersController < Site::ProfileController
     end
   end
   
+   def destroy
+    if @offer.destroy
+      redirect_to site_profile_offers_performed_path,
+        notice: "Solicitação excluída com sucesso!"
+    else
+      redirect_to site_profile_offers_performed_path,
+        notice: "Falha ao excluir a solicitação!"
+    end
+  end
+  
   private
   
   def offer_params
     params.require(:offer).permit(:status, :exchange_id, :sale_id)
   end
+  
+  def set_offers
+      @offer = Offer.find(params[:id])
+    end
 end
