@@ -94,6 +94,8 @@ group :development, :test do
   gem 'rails-erd'
   # A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker'
+  # Kill the Rails process running in the current folder
+  gem 'shutup'
 end
 
 group :development do

@@ -36,13 +36,15 @@
     </table>
     
     <% if member_signed_in? %>
-      <!-- Button trigger modal -->
-      <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#offerModal">
-        Comprar
-      </button>
+      <% if current_member != @sale.member %>
+        <!-- Button trigger modal -->
+        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#offerModal">
+          Comprar
+        </button>
+      <% end %>
     <% else %>
       <!-- Button trigger modal -->
-      <%= link_to "Comprar", new_member_session_path, class: "btn btn-success" %>
+      <%= link_to "Comprar", new_member_session_path, class: "btn btn-primary" %>
       
       <h6 class="red-adv">*Para fazer uma solicitação de compra é necessário estar logado</h6>
     <% end %>
