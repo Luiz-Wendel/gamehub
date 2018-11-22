@@ -156,7 +156,7 @@ function setActive(){
 /* Função para colocar a classe 'pull-right' e 'pull-left' para as tags <th> e <td> */
 function configTable(){
   var url = window.location.pathname.split("/");
-  if(url[2] == 'exchange_detail' || url[2] == 'sale_detail'){
+  if(url[2] == 'exchange_detail' || url[2] == 'sale_detail' || url[4] == 'details'){
     $('th').attr('style','width: 442.5px;text-align: right !important;');
     $('td').attr('style','width: 442.5px;text-align: left !important;');
   }

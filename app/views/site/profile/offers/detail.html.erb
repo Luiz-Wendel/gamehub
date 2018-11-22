@@ -1,0 +1,5 @@
+<% if @tipo == 'exchange' %>
+  <%= render partial: 'site/profile/offers/exchange_details' %>
+<% elsif @tipo == 'sale' %>
+  <%= render partial: 'site/profile/offers/sale_details' %>
+<% end %>

@@ -1,0 +1,102 @@
+<h1>Detalhes da troca</h1>
+
+<div class="thumbnail">
+  <div class="caption center">
+    <%= image_tag @offer.exchange.member_game.game.picture.url(:medium), class: "card-img-top img-fluid" %>
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <%= image_tag @offer.exchange.game.picture.url(:medium), class: "card-img-top img-fluid" %>
+
+    <div class="well well-sm" style="margin-top: 15px;">
+        <h4>Detalhes do jogo oferecido</h4>
+    </div>
+    <table class="table table-hover table-responsive">
+      <tbody>
+        <tr>
+          <th>
+            Jogo oferecido:
+          </th>
+          <td>
+            <%= @offer.exchange.member_game.game.name %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Plataforma:
+          </th>
+          <td>
+            <%= @offer.exchange.member_game.platform %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Qualidade do jogo:
+          </th>
+          <td>
+            <%= @offer.exchange.member_game.quality %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="well well-sm">
+        <h4>Detalhes do jogo requerido</h4>
+    </div>
+    <table class="table table-hover table-responsive">
+      <tbody>
+        <tr>
+          <th>
+            Jogo requerido:
+          </th>
+          <td>
+            <%= @offer.member_game.game.name %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Plataforma:
+          </th>
+          <td>
+            <%= @offer.member_game.platform %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Qualidade do jogo:
+          </th>
+          <td>
+            <%= @offer.member_game.quality %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="well well-sm">
+        <h4>Mais informações</h4>
+    </div>
+    <table class="table table-hover table-responsive">
+      <tbody>
+        <th>
+          Preço requerido:
+        </th>
+        <% if @offer.exchange.price == 0 %>
+          <td>-</td>
+        <% else %>
+          <td><%= humanized_money_with_symbol @offer.exchange.price %></td>
+        <% end %>
+      </tbody>
+    </table>
+    
+    <% if @offer.status == 'waiting_response' %>
+      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#statusModal">
+        Avaliar
+      </button>
+    <% end %>
+    
+    <%#= rating_for @offer.exchange, 'quality', disable_after_rate: false, cancel: true %>
+    <!--h6 class="text-muted"><%#= @offer.exchange.rates('quality').count %> Aval.</h6-->
+  </div>
+  <!-- /.caption -->
+  
+  <%= render partial: 'site/profile/offers/status_modal' %>
+</div>

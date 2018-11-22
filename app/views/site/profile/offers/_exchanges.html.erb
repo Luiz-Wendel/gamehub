@@ -1,51 +1,66 @@
+<% exchanges = @exchange_offers %>
 
-<table class="table-app table-hover table-responsive" style="width: 100%;">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Meu jogo</th>
-      <th></th>
-      <th>Jogo requerido</th>
-      <th>Preço requerido</th>
-      <% if current_page?(:controller => 'offers', :action => 'performed') %>
-        <th>Status</th>
-        <th>Excluir</th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-    <% i = 1 %>
-    <% @exchange_offers.each do |offer| %>
+<% unless exchanges.blank? %>
+  <table class="table-app table-hover table-responsive" style="width: 100%;">
+    <thead>
       <tr>
-        <td><%= i %></td>
-        <td><%= image_tag offer.exchange.member_game.game.picture(:thumb) %></td>
-        <td>
-          <span class="glyphicon glyphicon-chevron-left"></span>
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </td>
-        <td><%= image_tag offer.exchange.game.picture(:thumb) %></td>
-        <% if offer.exchange.price == 0 %>
-          <td>-</td>
-        <% else %>
-          <td><%= humanized_money_with_symbol offer.exchange.price %></td>
-        <% end %>
+        <th>#</th>
+        <th>Meu jogo</th>
+        <th></th>
+        <th>Jogo requerido</th>
+        <th>Preço requerido</th>
+        <th>Status</th>
         <% if current_page?(:controller => 'offers', :action => 'performed') %>
-          <td><%= offer.status_i18n %></td>
-          <% if offer.status = 0 %>
-            <td class="td-ico">
-              <%= link_to site_profile_offer_path(offer.id), method: :delete, class: "btn btn-danger btn-sm circle-btn", data: {confirm: t('messages.confirm')} do %>
-                <i class="fa fa-times img-center"></i>
-              <% end %>
-            </td>
-          <% else %>
-            <%= link_to '#', disabled: "disabled", class: "btn btn-danger btn-sm circle-btn" do %>
-                <i class="fa fa-times img-center"></i>
-              <% end %>
-          <% end %>
+          <th>Excluir</th>
+        <% elsif current_page?(:controller => 'offers', :action => 'recieved') %>
+          <th>Detalhe</th>
         <% end %>
       </tr>
-      
-      <% i += 1 %>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% i = 1 %>
+      <% exchanges.each do |offer| %>
+        <tr>
+          <td><%= i %></td>
+          <td><%= image_tag offer.exchange.member_game.game.picture(:thumb) %></td>
+          <td>
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </td>
+          <td><%= image_tag offer.exchange.game.picture(:thumb) %></td>
+          <% if offer.exchange.price == 0 %>
+            <td>-</td>
+          <% else %>
+            <td><%= humanized_money_with_symbol offer.exchange.price %></td>
+          <% end %>
+          <td><%= offer.status_i18n %></td>
+          <% if current_page?(:controller => 'offers', :action => 'performed') %>
+            <% if offer.status == 'waiting_response' %>
+              <td class="td-ico">
+                <%= link_to site_profile_offer_path(offer.id), method: :delete, class: "btn btn-danger btn-sm circle-btn", data: {confirm: t('messages.confirm')} do %>
+                  <i class="fa fa-times img-center"></i>
+                <% end %>
+              </td>
+            <% else %>
+              <td class="td-ico">
+                <%= link_to '#', disabled: "disabled", class: "btn btn-danger btn-sm circle-btn" do %>
+                  <i class="fa fa-times img-center"></i>
+                <% end %>
+              </td>
+            <% end %>
+          <% elsif current_page?(:controller => 'offers', :action => 'recieved') %>
+            <td class="td-ico">
+              <%= link_to site_profile_offers_detail_path(offer.id, :tipo => 'exchange'), class: "btn btn-info btn-sm circle-btn" do %>
+                <i class="fa fa-search img-center"></i>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+        
+        <% i += 1 %>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h3 class="red-adv center">Não foram encontrados registros</h3>
+<% end %>

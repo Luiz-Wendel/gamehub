@@ -15,7 +15,7 @@
             <%= image_tag @sale.member_game.game.picture.url(:medium), class: "card-img-top img-fluid" %>
             
             <%= hidden_field :offer, :sale_id, value: @sale.id %>
-            <%= hidden_field :offer, :status, value: 0 %>
+            <%= hidden_field :offer, :status, value: 'waiting_response' %>
           </div>
         </div>
         <div class="modal-footer">

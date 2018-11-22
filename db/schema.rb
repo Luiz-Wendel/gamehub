@@ -127,11 +127,13 @@ ActiveRecord::Schema.define(version: 20181112185535) do
     t.integer  "member_id"
     t.integer  "exchange_id"
     t.integer  "sale_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "member_game_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "offers", ["exchange_id"], name: "index_offers_on_exchange_id"
+  add_index "offers", ["member_game_id"], name: "index_offers_on_member_game_id"
   add_index "offers", ["member_id"], name: "index_offers_on_member_id"
   add_index "offers", ["sale_id"], name: "index_offers_on_sale_id"
 

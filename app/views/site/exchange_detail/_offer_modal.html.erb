@@ -17,8 +17,11 @@
             <span class="glyphicon glyphicon-chevron-right"></span>
             <%= image_tag @exchange.game.picture.url(:medium), class: "card-img-top img-fluid" %>
             
+            <br/><br/>
+            <%= collection_select :offer, :member_game_id, MemberGame.where(member: current_member).joins(:game).merge(Game.order(:name)), :id, :game_name_with_quality, { :prompt=> 'Selecione...' }, { class: "form-control" } %>
+            
             <%= hidden_field :offer, :exchange_id, value: @exchange.id %>
-            <%= hidden_field :offer, :status, value: 0 %>
+            <%= hidden_field :offer, :status, value: 'waiting_response' %>
           </div>
         </div>
         <div class="modal-footer">

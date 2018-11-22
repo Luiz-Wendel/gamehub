@@ -4,6 +4,7 @@ class MemberGame < ActiveRecord::Base
   belongs_to :member
   has_many :sales, dependent: :destroy
   has_many :exchanges, dependent: :destroy
+  has_many :offers, dependent: :destroy
   
   # Validates
   validates_presence_of :game, :member, :quality, :platform

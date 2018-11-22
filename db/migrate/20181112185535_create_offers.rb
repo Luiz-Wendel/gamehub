@@ -5,6 +5,7 @@ class CreateOffers < ActiveRecord::Migration
       t.references :member, index: true, foreign_key: true
       t.references :exchange, index: true, foreign_key: true
       t.references :sale, index: true, foreign_key: true
+      t.references :member_game, index: true, foreign_key: true
 
       t.timestamps null: false
     end

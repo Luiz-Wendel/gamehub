@@ -1,0 +1,49 @@
+<h1>Detalhes da venda</h1>
+
+<div class="thumbnail">
+  <div class="caption center">
+    <%= image_tag @offer.sale.member_game.game.picture.url(:medium), class: "card-img-top img-fluid" %>
+    
+    <table class="table table-hover table-responsive">
+      <tbody>
+        <tr>
+          <th>
+            Jogo:
+          </th>
+          <td>
+            <%= @offer.sale.member_game.game.name %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Plataforma:
+          </th>
+          <td>
+            <%= @offer.sale.member_game.platform %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Qualidade do jogo:
+          </th>
+          <td>
+            <%= @offer.sale.member_game.quality %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Preço: 
+          </th>
+          <td>
+            <%= humanized_money_with_symbol @offer.sale.price %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <%#= rating_for @offer, 'quality', disable_after_rate: false, cancel: true %>
+    <!--h6 class="text-muted"><%#= @offer.rates('quality').count %> Aval.</h6-->
+  </div>
+  <!-- /.caption -->
+  
+</div>
