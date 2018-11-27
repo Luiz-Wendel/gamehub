@@ -6,7 +6,7 @@
 /**
  * Brazilian Portuguese translation for bootstrap-markdown
  * Gabriel Anderson <gcacars@>
- */
+ 
 (function ($) {
   $.fn.markdown.messages.ptBR = {
     'Bold': "Negrito",
@@ -36,3 +36,4 @@
 
   $('#ad_description_md').markdown({language: 'ptBR'});
 }(jQuery));
+*/

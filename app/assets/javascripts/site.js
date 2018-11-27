@@ -162,3 +162,18 @@ function configTable(){
   }
 }
 /* ######################################################################################################################## */
+
+/* Função para colcoar/retirar a mensagem nas solicitações de troca */
+function selectInit(){
+  $('#offer_member_game_id').on('change', function(){
+    if($(this).val() != null || $(this).val() != ''){
+      $('#unselected_adv').removeClass('hidden');
+      $('#btn_submit').addClass('hidden');
+    }
+    if($(this).val() >= 1){
+      $('#unselected_adv').addClass('hidden');
+      $('#btn_submit').removeClass('hidden');
+    }
+  });
+}
+/* ######################################################################################################################## */

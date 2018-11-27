@@ -18,15 +18,21 @@
             <%= image_tag @exchange.game.picture.url(:medium), class: "card-img-top img-fluid" %>
             
             <br/><br/>
-            <%= collection_select :offer, :member_game_id, MemberGame.where(member: current_member).joins(:game).merge(Game.order(:name)), :id, :game_name_with_quality, { :prompt=> 'Selecione...' }, { class: "form-control" } %>
+            <% available_games = MemberGame.where(member: current_member).joins(:game).where(:games => {:name => @exchange.game.name}).merge(Game.order(:name)) %>
+            <% unless available_games.blank? %>
+              <%= collection_select :offer, :member_game_id, available_games, :id, :game_name_with_quality, { :prompt=> 'Selecione...' }, { class: "form-control" } %>
+              <p class="red-adv" id="unselected_adv">*Para realizar a solicitação, por favor selecionar um jogo</p>
+            <% else %>
+              <p class="red-adv">*Para realizar a solicitação, por favor cadastre o jogo requerido no seu perfil</p>
+            <% end %>
             
             <%= hidden_field :offer, :exchange_id, value: @exchange.id %>
             <%= hidden_field :offer, :status, value: 'waiting_response' %>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
-          <%= submit_tag "Sim", class: "btn btn-success" %>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+          <%= submit_tag "Sim", class: "btn btn-success hidden", id: "btn_submit" %>
         </div>
       </div>
       <!-- /.modal-content -->

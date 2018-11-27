@@ -50,27 +50,26 @@ class Site::Profile::OffersController < Site::ProfileController
     @offer = Offer.new(offer_params)
     @offer.member = current_member
     
-    if @offer.save
-      if(@offer.exchange.present?)
+    if(@offer.exchange.present? && @offer.member_game.present?)
+      if @offer.save
         redirect_to site_exchange_detail_path(@offer.exchange.id),
         notice: "Oferta de troca realizada com sucesso!"
       else
-        if(@offer.sale.present?)
-          redirect_to site_sale_detail_path(@offer.sale.id),
-          notice: "Oferta de compra realizada com sucesso!"
-        end
-      end
-    else
-      if(@offer.exchange.present?)
         redirect_to site_exchange_detail_path(@offer.ad.id),
         notice: "Erro ao realizar a oferta de troca!"
-      else
-        if(@offer.sale.present?)
-          redirect_to site_sale_detail_path(@offer.ad.id),
-          notice: "Erro ao realizar a oferta de compra!"
-        end
       end
     end
+    
+    if(@offer.sale.present?)
+      if @offer.save
+        redirect_to site_sale_detail_path(@offer.sale.id),
+        notice: "Oferta de compra realizada com sucesso!"
+      else
+        edirect_to site_sale_detail_path(@offer.ad.id),
+        notice: "Erro ao realizar a oferta de compra!"
+      end
+    end
+    
   end
   
    def destroy
