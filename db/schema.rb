@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181112185535) do
+ActiveRecord::Schema.define(version: 20181123181534) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -153,6 +153,18 @@ ActiveRecord::Schema.define(version: 20181112185535) do
   end
 
   add_index "profile_members", ["member_id"], name: "index_profile_members_on_member_id"
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "rate_val"
+    t.text     "comment",    limit: 250
+    t.integer  "member_id"
+    t.integer  "game_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "ratings", ["game_id"], name: "index_ratings_on_game_id"
+  add_index "ratings", ["member_id"], name: "index_ratings_on_member_id"
 
   create_table "sales", force: :cascade do |t|
     t.integer  "price_cents",    default: 0

@@ -9,7 +9,7 @@ class MemberGame < ActiveRecord::Base
   # Validates
   validates_presence_of :game, :member, :quality, :platform
   
-  #Scopes
+  # Scopes
   scope :to_member, ->(member) { where(member: member).order(:platform).joins(:game).merge(Game.order(:name)) }
   
   def game_name_with_quality

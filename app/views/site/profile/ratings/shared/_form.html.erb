@@ -1,0 +1,53 @@
+<%= content_for :javascripts do %>
+  <%= javascript_include_tag 'site/profile/ratings' %>
+<% end %>
+
+<% if @rating.errors.any? %>
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <ul>
+            <% @rating.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+<%= @rating.inspect %><%= params.inspect %>
+<%= form_for([:site, :profile, @rating]) do |f| %>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= f.label :rate_val do %>
+          Minha avaliação<span class="red-adv">*</span>
+        <% end %>
+        <% unless params[:action] == 'edit' %>
+          <%= f.range_field :rate_val, :in => 1..5, :step => '1', :value => 1 %>
+          <h4 id="rating_val" class="red-adv">1</h4>
+        <% else %>
+          <%= f.range_field :rate_val, :in => 1..5, :step => '1', :value => "#{@rating.rate_val}" %>
+          <h4 id="rating_val" class="red-adv"><%= @rating.rate_val %></h4>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="form-group">
+        <%= f.label :comment do %>
+          Comentário
+        <% end %>
+        <%= f.text_area :comment, { class: "form-control" } %>
+      </div>
+    </div>
+  </div>
+  
+  <% unless params[:action] == 'edit' %>
+    <%= f.hidden_field :game_id, value: Game.find(@game_id).id %>
+  <% else %>
+    <%= f.hidden_field :game_id, value: Rating.find(params[:id]).game.id %>
+  <% end %>
+
+  <%= submit_tag "Enviar", class: "btn btn-success" %>
+  <%= link_to "Cancelar", site_profile_ratings_path, class: "btn btn-danger" %>
+<% end %>
