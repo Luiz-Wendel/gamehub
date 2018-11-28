@@ -33,10 +33,10 @@
     <% else %>
       <li>
         <%# Foi usado um link_to para herdar a formatação, porém as funções de link foram retiradas via .js e .css %>
-        <%= link_to "#{current_member.email}", "#", :disabled => "disabled", id: "email-link" %>
+        <%= link_to "Logado como: #{current_member.profile_member.name}", "#", :disabled => "disabled", id: "email-link" %>
       </li>
       <li>
-        <%= link_to "Perfil", site_profile_dashboard_index_path, id: "perfil-link" %>
+        <%= link_to "Perfil", site_profile_member_games_path, id: "perfil-link" %>
       </li>
       <li>
         <%= link_to "Sair", destroy_member_session_path, method: :delete, id: "sair-link" %>
@@ -54,9 +54,9 @@
     <!-- Sidebar -->
     <div class="collapse navbar-collapse" id="sidebar-wrapper">
       <ul class="sidebar-nav">
-        <li>
-          <%= link_to "Dashboard", site_profile_dashboard_index_path %>
-        </li>
+        <!--li>
+          <%#= link_to "Dashboard", site_profile_dashboard_index_path %>
+        </li-->
         <li>
           <%= link_to "Meus dados", edit_site_profile_profile_member_path(current_member.id) %>
         </li>

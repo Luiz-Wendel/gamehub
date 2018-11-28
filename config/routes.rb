@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'backoffice', to: 'backoffice/dashboard#index'
+  get 'backoffice', to: 'backoffice/games#index'
 
   namespace :backoffice do
     resources :send_mail, only: [:edit, :create]
